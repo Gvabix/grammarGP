@@ -18,7 +18,13 @@ assignmentStatement
 ifStatement : IF LPAREN expression RPAREN statement (ELSE statement)?;
 
 loopStatement
-            : WHILE LPAREN expression RPAREN statement;
+            : WHILE LPAREN expression RPAREN statement* breakContinueStatement?;
+
+breakContinueStatement: IF LPAREN expression RPAREN (breakStatement | continueStatement);
+
+breakStatement: BREAK SEMI;
+
+continueStatement: CONTINUE SEMI;
 
 read        : READ LPAREN identifier RPAREN SEMI;
 
@@ -109,6 +115,8 @@ ELSE: 'else';
 WHILE: 'while';
 READ: 'read';
 WRITE: 'write';
+BREAK: 'break';
+CONTINUE: 'continue';
 
 AND: '&&';
 OR: '||';
