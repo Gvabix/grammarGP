@@ -1,13 +1,17 @@
 import sys
+import os
 from antlr4 import *
-from grammarGPLexer import grammarGPLexer
-from grammarGPParser import grammarGPParser
-from grammarGPVisitor import grammarGPVisitor
+from gen.grammarGPLexer import grammarGPLexer
+from gen.grammarGPParser import grammarGPParser
+from gen.grammarGPVisitor import grammarGPVisitor
+
+sys.path.append(os.path.abspath(".."))
+
 
 class RuntimeEnvironment:
     def __init__(self):
         self.variables = {}
-        self.loop_control = None  # Tracks 'break' or 'continue' signals
+        self.loop_control = None
 
     def set_variable(self, name, value):
         self.variables[name] = value
@@ -17,6 +21,7 @@ class RuntimeEnvironment:
             return self.variables[name]
         else:
             raise Exception(f"Variable '{name}' is not defined.")
+
 
 class Interpreter(grammarGPVisitor):
     def __init__(self):
@@ -133,6 +138,7 @@ class Interpreter(grammarGPVisitor):
         elif ctx.FLOAT_LITERAL():
             return float(ctx.FLOAT_LITERAL().getText())
 
+
 def main():
     input_stream = FileStream(sys.argv[1])
     lexer = grammarGPLexer(input_stream)
@@ -142,6 +148,7 @@ def main():
 
     interpreter = Interpreter()
     interpreter.visit(tree)
+
 
 if __name__ == "__main__":
     main()
