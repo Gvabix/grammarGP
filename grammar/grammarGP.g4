@@ -9,6 +9,8 @@ statement   : assignmentStatement SEMI
             | ifStatement
             | read
             | write
+            | breakStatement
+            | continueStatement
             | block
             ;
 
@@ -18,19 +20,15 @@ assignmentStatement
 ifStatement : IF LPAREN expression RPAREN statement (ELSE statement)?;
 
 loopStatement
-            : WHILE LPAREN expression RPAREN statement* breakContinueStatement?;
+            : WHILE LPAREN expression RPAREN block;
 
-breakContinueStatement: IF LPAREN expression RPAREN (breakStatement | continueStatement);
+breakStatement : BREAK SEMI;
 
-breakStatement: BREAK SEMI;
-
-continueStatement: CONTINUE SEMI;
+continueStatement : CONTINUE SEMI;
 
 read        : READ LPAREN identifier RPAREN SEMI;
 
 write       : WRITE LPAREN expression RPAREN SEMI;
-
-
 
 primaryExpression
             : literal
@@ -71,7 +69,6 @@ expression  : logicalOrExpression;
 
 castExpression
             : typeSpecifier LPAREN expression RPAREN;
-
 
 relation    : LT | LE | GT | GE;
 
