@@ -5,150 +5,189 @@ from gen.grammarGPLexer import grammarGPLexer
 from gen.grammarGPParser import grammarGPParser
 from gen.grammarGPVisitor import grammarGPVisitor
 
-sys.path.append(os.path.abspath(".."))
+sys.path.append(os.path.abspath(""))
 
+class Variable:
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
 
-class RuntimeEnvironment:
+    @staticmethod
+    def create_and_assign(name, value):
+        return Variable(name, value)
+
+    def on_assign(self, new_value):
+        self.value = new_value
+
+class VariableMemory:
     def __init__(self):
-        self.variables = {}
-        self.loop_control = None
+        self.memory = {}
 
-    def set_variable(self, name, value):
-        self.variables[name] = value
+    def assign_variable(self, name, value):
+        self.memory[name] = value
 
-    def get_variable(self, name):
-        if name in self.variables:
-            return self.variables[name]
+    def get_variable_value(self, name):
+        if name in self.memory:
+            return self.memory[name]
         else:
             raise Exception(f"Variable '{name}' is not defined.")
 
 
-class Interpreter(grammarGPVisitor):
-    def __init__(self):
-        self.env = RuntimeEnvironment()
+class InterpreterVisitor(grammarGPVisitor):
+    def __init__(self, in_path: str, out_path: str):
+        super().__init__()
+        self.in_file = open(in_path, "r")
+        self.out_file = open(out_path, "w+")
+        self.variable_memory = VariableMemory()
+        self.loop_control = None  # Tracks 'break' or 'continue'
 
-    def visitProgram(self, ctx):
-        for statement in ctx.statement():
-            self.visit(statement)
+    def visitProgram(self, ctx: grammarGPParser.ProgramContext):
+        self.visitChildren(ctx)
 
-    def visitAssignmentStatement(self, ctx):
-        name = ctx.identifier().getText()
+    def visitBlock(self, ctx: grammarGPParser.BlockContext):
+        self.visitChildren(ctx)
+
+    def visitStatement(self, ctx: grammarGPParser.StatementContext):
+        for child in ctx.children:
+            if self.loop_control:  # Exit early if `break` or `continue` is triggered
+                break
+            self.visit(child)
+
+    def visitAssignmentStatement(self, ctx: grammarGPParser.AssignmentStatementContext):
+        identifier = ctx.identifier().getText()
         value = self.visit(ctx.expression())
-        self.env.set_variable(name, value)
+        self.variable_memory.assign_variable(identifier, value)
 
-    def visitIfStatement(self, ctx):
+    def visitIfStatement(self, ctx: grammarGPParser.IfStatementContext):
         condition = self.visit(ctx.expression())
         if condition:
             self.visit(ctx.statement(0))
         elif ctx.ELSE():
             self.visit(ctx.statement(1))
 
-    def visitLoopStatement(self, ctx):
+    def visitLoopStatement(self, ctx: grammarGPParser.LoopStatementContext):
         while self.visit(ctx.expression()):
+            self.loop_control = None  # Reset control signals
             self.visit(ctx.block())
-            if self.env.loop_control == 'break':
-                self.env.loop_control = None
+            if self.loop_control == "break":
                 break
-            elif self.env.loop_control == 'continue':
-                self.env.loop_control = None
+            if self.loop_control == "continue":
                 continue
 
-    def visitBreakStatement(self, ctx):
-        self.env.loop_control = 'break'
+    def visitBreakStatement(self, ctx: grammarGPParser.BreakStatementContext):
+        self.loop_control = "break"
 
-    def visitContinueStatement(self, ctx):
-        self.env.loop_control = 'continue'
+    def visitContinueStatement(self, ctx: grammarGPParser.ContinueStatementContext):
+        self.loop_control = "continue"
 
-    def visitRead(self, ctx):
-        var_name = ctx.identifier().getText()
-        value = int(input(f"Enter value for {var_name}: "))
-        self.env.set_variable(var_name, value)
+    def visitRead(self, ctx: grammarGPParser.ReadContext):
+        identifier = ctx.identifier().getText()
+        value = self.in_file.readline().strip()
+        try:
+            value = int(value)
+        except ValueError:
+            try:
+                value = float(value)
+            except ValueError:
+                value = 0
+        self.variable_memory.assign_variable(identifier, value)
 
-    def visitWrite(self, ctx):
+    def visitWrite(self, ctx: grammarGPParser.WriteContext):
         value = self.visit(ctx.expression())
-        print(value)
+        self.out_file.write(str(value) + "\n")
 
-    def visitExpression(self, ctx):
+    def visitExpression(self, ctx: grammarGPParser.ExpressionContext):
         return self.visit(ctx.logicalOrExpression())
 
-    def visitLogicalOrExpression(self, ctx):
-        if ctx.OR():
-            return self.visit(ctx.logicalAndExpression(0)) or self.visit(ctx.logicalAndExpression(1))
-        else:
-            return self.visit(ctx.logicalAndExpression(0))
+    def visitPrimaryExpression(self, ctx: grammarGPParser.PrimaryExpressionContext):
+        if ctx.identifier():
+            return self.variable_memory.get_variable_value(ctx.identifier().getText())
+        elif ctx.literal():
+            if ctx.literal().INTEGER_LITERAL():
+                return int(ctx.literal().getText())
+            elif ctx.literal().FLOAT_LITERAL():
+                return float(ctx.literal().getText())
+        elif ctx.LPAREN():
+            return self.visit(ctx.expression())
 
-    def visitLogicalAndExpression(self, ctx):
-        if ctx.AND():
-            return self.visit(ctx.equalityExpression(0)) and self.visit(ctx.equalityExpression(1))
-        else:
-            return self.visit(ctx.equalityExpression(0))
-
-    def visitEqualityExpression(self, ctx):
-        left = self.visit(ctx.relationalExpression(0))
-        right = self.visit(ctx.relationalExpression(1))
-        if ctx.EQ():
-            return left == right
-        elif ctx.NE():
-            return left != right
-
-    def visitRelationalExpression(self, ctx):
-        left = self.visit(ctx.additiveExpression(0))
-        right = self.visit(ctx.additiveExpression(1))
-        if ctx.LT():
-            return left < right
-        elif ctx.GT():
-            return left > right
-        elif ctx.LE():
-            return left <= right
-        elif ctx.GE():
-            return left >= right
-
-    def visitAdditiveExpression(self, ctx):
-        left = self.visit(ctx.multiplicativeExpression(0))
-        if ctx.PLUS():
-            return left + self.visit(ctx.multiplicativeExpression(1))
-        elif ctx.MINUS():
-            return left - self.visit(ctx.multiplicativeExpression(1))
-
-    def visitMultiplicativeExpression(self, ctx):
-        left = self.visit(ctx.unaryExpression(0))
-        if ctx.TIMES():
-            return left * self.visit(ctx.unaryExpression(1))
-        elif ctx.DIV():
-            return left // self.visit(ctx.unaryExpression(1))
-
-    def visitUnaryExpression(self, ctx):
+    def visitUnaryExpression(self, ctx: grammarGPParser.UnaryExpressionContext):
+        value = self.visit(ctx.primaryExpression())
         if ctx.unaryOperator():
-            if ctx.unaryOperator().PLUS():
-                return self.visit(ctx.primaryExpression())
-            elif ctx.unaryOperator().MINUS():
-                return -self.visit(ctx.primaryExpression())
-        else:
-            return self.visit(ctx.primaryExpression())
+            operator = ctx.unaryOperator().getText()
+            if operator == "-":
+                return -value
+            elif operator == "!":
+                return not value
+        return value
 
-    def visitPrimaryExpression(self, ctx):
-        if ctx.literal():
-            return self.visit(ctx.literal())
-        elif ctx.identifier():
-            return self.env.get_variable(ctx.identifier().getText())
+    def visitMultiplicativeExpression(self, ctx: grammarGPParser.MultiplicativeExpressionContext):
+        result = self.visit(ctx.unaryExpression(0))
+        for i in range(1, len(ctx.unaryExpression())):
+            operator = ctx.getChild(2 * i - 1).getText()
+            value = self.visit(ctx.unaryExpression(i))
+            if operator == "*":
+                result *= value
+            elif operator == "/":
+                result /= value
+        return result
 
-    def visitLiteral(self, ctx):
-        if ctx.INTEGER_LITERAL():
-            return int(ctx.INTEGER_LITERAL().getText())
-        elif ctx.FLOAT_LITERAL():
-            return float(ctx.FLOAT_LITERAL().getText())
+    def visitAdditiveExpression(self, ctx: grammarGPParser.AdditiveExpressionContext):
+        result = self.visit(ctx.multiplicativeExpression(0))
+        for i in range(1, len(ctx.multiplicativeExpression())):
+            operator = ctx.getChild(2 * i - 1).getText()
+            value = self.visit(ctx.multiplicativeExpression(i))
+            if operator == "+":
+                result += value
+            elif operator == "-":
+                result -= value
+        return result
 
+    def visitRelationalExpression(self, ctx: grammarGPParser.RelationalExpressionContext):
+        left = self.visit(ctx.additiveExpression(0))
+        if ctx.relation():
+            operator = ctx.relation().getText()
+            right = self.visit(ctx.additiveExpression(1))
+            if operator == "<":
+                return left < right
+            elif operator == "<=":
+                return left <= right
+            elif operator == ">":
+                return left > right
+            elif operator == ">=":
+                return left >= right
+        return left
 
-def main():
-    input_stream = FileStream(sys.argv[1])
-    lexer = grammarGPLexer(input_stream)
-    stream = CommonTokenStream(lexer)
-    parser = grammarGPParser(stream)
-    tree = parser.program()
+    def visitEqualityExpression(self, ctx: grammarGPParser.EqualityExpressionContext):
+        left = self.visit(ctx.relationalExpression(0))
+        if ctx.equalityRelation():
+            operator = ctx.equalityRelation().getText()
+            right = self.visit(ctx.relationalExpression(1))
+            if operator == "==":
+                return left == right
+            elif operator == "!=":
+                return left != right
+        return left
 
-    interpreter = Interpreter()
-    interpreter.visit(tree)
+    def visitLogicalAndExpression(self, ctx: grammarGPParser.LogicalAndExpressionContext):
+        result = self.visit(ctx.equalityExpression(0))
+        for i in range(1, len(ctx.equalityExpression())):
+            if not result:
+                break
+            result = result and self.visit(ctx.equalityExpression(i))
+        return result
 
+    def visitLogicalOrExpression(self, ctx: grammarGPParser.LogicalOrExpressionContext):
+        result = self.visit(ctx.logicalAndExpression(0))
+        for i in range(1, len(ctx.logicalAndExpression())):
+            if result:
+                break
+            result = result or self.visit(ctx.logicalAndExpression(i))
+        return result
 
-if __name__ == "__main__":
-    main()
+    def visitCastExpression(self, ctx: grammarGPParser.CastExpressionContext):
+        value = self.visit(ctx.expression())
+        if ctx.typeSpecifier().INT():
+            return int(value)
+        elif ctx.typeSpecifier().FLOAT():
+            return float(value)
+        return value
