@@ -69,10 +69,26 @@ class GrammarGP:
         return block
 
     def generate_assignment(self) -> Node:
+        var = random.choice(self.variables)
+        expression = self.generate_expression(0)  # Generates a random expression
         return Node('assignmentStatement', '=', [
-            Node('identifier', random.choice(self.variables)),
-            self.generate_expression(0)
+            Node('identifier', var),
+            expression
         ])
+
+    def generate_expression(self, depth: int) -> Node:
+        if depth >= self.max_depth:
+            return self.generate_literal_or_identifier()
+
+        expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
+        operator = random.choice(self.operators[expr_type])
+
+        # Ensure that the left and right expressions are properly formed
+        left_expr = self.generate_expression(depth + 1)
+        right_expr = self.generate_expression(depth + 1)
+
+        return Node('expression', operator, [left_expr, right_expr])
+
 
     def generate_if(self, depth: int) -> Node:
         node = Node('ifStatement', 'if', [
@@ -99,15 +115,7 @@ class GrammarGP:
             self.generate_expression(depth + 1)
         ])
 
-    def generate_expression(self, depth: int) -> Node:
-        if depth >= self.max_depth:
-            return self.generate_literal_or_identifier()
 
-        expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
-        operator = random.choice(self.operators[expr_type])
-        left_expr = self.generate_expression(depth + 1)
-        right_expr = self.generate_expression(depth + 1)
-        return Node('expression', operator, [left_expr, right_expr])
 
     def generate_literal_or_identifier(self) -> Node:
         if random.random() < 0.5:
@@ -205,7 +213,7 @@ class GrammarGP:
 def main():
     gp = GrammarGP(max_depth=4, min_depth=2, mutation_rate=0.25)
     population_size = 100
-    generations = 50
+    generations = 10
     tournament_size = 2
 
     population = [gp.generate_program() for _ in range(population_size)]
@@ -239,9 +247,9 @@ def main():
             "average_fitness": avg_fitness,
         })
 
-    with open('results3.json', 'w') as f:
+    with open('results1.json', 'w') as f:
         json.dump(results, f, indent=4)
-    print("Zapisano wyniki do pliku results4.json")
+    print("Zapisano wyniki do pliku results1.json")
 
 if __name__ == "__main__":
     main()
