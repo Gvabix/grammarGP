@@ -17,7 +17,7 @@ class Node:
 
 # Klasa główna dla GP
 class GrammarGP:
-    def __init__(self, max_depth: int = 5, min_depth: int = 2, mutation_rate: float = 0.3):
+    def __init__(self, max_depth: int = 4, min_depth: int = 2, mutation_rate: float = 0.3):
         self.max_depth = max_depth
         self.min_depth = min_depth
         self.mutation_rate = mutation_rate
@@ -34,12 +34,51 @@ class GrammarGP:
     def generate_program(self, depth: int = 0) -> Node:
         program = Node('program', '')
         num_statements = random.randint(3, 6)
+
         for _ in range(num_statements):
-            program.children.append(self.generate_statement(depth + 1))
+            statement = self.generate_statement(depth + 1)
+            # Upewnij się, że program zawiera operację wyjścia (write)
+            if isinstance(statement, Node) and statement.type != 'write' and random.random() < 0.3:
+                program.children.append(self.generate_write(depth))  #
+            program.children.append(statement)
+
         return program
 
+
+    def generate_block(self, depth: int) -> Node:
+        block = Node('block', '{')
+        num_statements = random.randint(1, 3)
+        for _ in range(num_statements):
+            block.children.append(self.generate_statement(depth + 1))
+        return block
+
+    def generate_assignment(self) -> Node:
+        var = random.choice(self.variables)
+        expression = self.generate_expression(0)
+        return Node('assignmentStatement', '=', [
+            Node('identifier', var),
+            expression
+        ])
+
+    def generate_expression(self, depth: int) -> Node:
+
+        if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
+                # Terminal: literal or identifier
+            return self.generate_literal_or_identifier()
+
+            # Non-terminal: binary operator expression
+        expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
+        operator = random.choice(self.operators[expr_type])
+
+            # Recursive call to generate left and right subtrees
+        left_expr = self.generate_expression(depth + 1)
+        right_expr = self.generate_expression(depth + 1)
+
+        return Node('expression', operator, [left_expr, right_expr])
+
     def generate_statement(self, depth: int) -> Node:
-        if depth >= self.max_depth:
+
+        if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
             return self.generate_assignment()
 
         statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write', 'break', 'continue', 'block'])
@@ -60,34 +99,6 @@ class GrammarGP:
             return Node('continueStatement', 'continue')
         elif statement_type == 'block':
             return self.generate_block(depth)
-
-    def generate_block(self, depth: int) -> Node:
-        block = Node('block', '{')
-        num_statements = random.randint(1, 3)
-        for _ in range(num_statements):
-            block.children.append(self.generate_statement(depth + 1))
-        return block
-
-    def generate_assignment(self) -> Node:
-        var = random.choice(self.variables)
-        expression = self.generate_expression(0)  # Generates a random expression
-        return Node('assignmentStatement', '=', [
-            Node('identifier', var),
-            expression
-        ])
-
-    def generate_expression(self, depth: int) -> Node:
-        if depth >= self.max_depth:
-            return self.generate_literal_or_identifier()
-
-        expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
-        operator = random.choice(self.operators[expr_type])
-
-        # Ensure that the left and right expressions are properly formed
-        left_expr = self.generate_expression(depth + 1)
-        right_expr = self.generate_expression(depth + 1)
-
-        return Node('expression', operator, [left_expr, right_expr])
 
 
     def generate_if(self, depth: int) -> Node:
@@ -114,8 +125,6 @@ class GrammarGP:
         return Node('write', 'write', [
             self.generate_expression(depth + 1)
         ])
-
-
 
     def generate_literal_or_identifier(self) -> Node:
         if random.random() < 0.5:
@@ -188,22 +197,17 @@ class GrammarGP:
         return selected[0][0]
 
     def subtree_crossover(self, parent1: Node, parent2: Node) -> Node:
-        # Perform subtree crossover by swapping subtrees between parents
         subtree1 = self.select_random_subtree(parent1)
         subtree2 = self.select_random_subtree(parent2)
-
-        # Create a copy of the first parent and replace a subtree with the second parent’s subtree
         child = copy.deepcopy(parent1)
         self.replace_subtree(child, subtree1, subtree2)
         return child
 
     def select_random_subtree(self, node: Node) -> Node:
-        # Randomly traverse the tree and return a random subtree
         all_nodes = self._get_all_nodes(node)
         return random.choice(all_nodes)
 
     def replace_subtree(self, parent: Node, old_subtree: Node, new_subtree: Node):
-        # Find and replace the old subtree with the new one
         nodes = self._get_all_nodes(parent)
         for i, n in enumerate(nodes):
             if n == old_subtree:
@@ -212,7 +216,7 @@ class GrammarGP:
 
 def main():
     gp = GrammarGP(max_depth=4, min_depth=2, mutation_rate=0.25)
-    population_size = 100
+    population_size = 10
     generations = 10
     tournament_size = 2
 
@@ -253,3 +257,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
