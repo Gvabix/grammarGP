@@ -7,6 +7,7 @@ from gen.grammarGPVisitor import grammarGPVisitor
 
 sys.path.append(os.path.abspath(""))
 
+
 class Variable:
     def __init__(self, name, value):
         self.name = name
@@ -18,6 +19,7 @@ class Variable:
 
     def on_assign(self, new_value):
         self.value = new_value
+
 
 class VariableMemory:
     def __init__(self):
@@ -34,12 +36,22 @@ class VariableMemory:
 
 
 class InterpreterVisitor(grammarGPVisitor):
-    def __init__(self, in_path: str, out_path: str):
+    def __init__(self, in_path: str, out_path: str, max_instructions: int = 1000, max_output: int = 100):
         super().__init__()
         self.in_file = open(in_path, "r")
         self.out_file = open(out_path, "w+")
         self.variable_memory = VariableMemory()
-        self.loop_control = None  # Tracks 'break' or 'continue'
+        self.loop_control = None
+        self.instruction_count = 0
+        self.max_instructions = max_instructions
+        self.output_count = 0
+        self.max_output = max_output
+
+    def visit(self, node):
+        self.instruction_count += 1
+        if self.instruction_count > self.max_instructions:
+            raise Exception("Przekroczono maksymalną liczbę instrukcji!")
+        return super().visit(node)
 
     def visitProgram(self, ctx: grammarGPParser.ProgramContext):
         self.visitChildren(ctx)
@@ -49,7 +61,7 @@ class InterpreterVisitor(grammarGPVisitor):
 
     def visitStatement(self, ctx: grammarGPParser.StatementContext):
         for child in ctx.children:
-            if self.loop_control:  # Exit early if `break` or `continue` is triggered
+            if self.loop_control:
                 break
             self.visit(child)
 
@@ -67,7 +79,7 @@ class InterpreterVisitor(grammarGPVisitor):
 
     def visitLoopStatement(self, ctx: grammarGPParser.LoopStatementContext):
         while self.visit(ctx.expression()):
-            self.loop_control = None  # Reset control signals
+            self.loop_control = None
             self.visit(ctx.block())
             if self.loop_control == "break":
                 break
@@ -82,19 +94,28 @@ class InterpreterVisitor(grammarGPVisitor):
 
     def visitRead(self, ctx: grammarGPParser.ReadContext):
         identifier = ctx.identifier().getText()
-        value = self.in_file.readline().strip()
         try:
-            value = int(value)
-        except ValueError:
+            value = self.in_file.readline().strip()
+            if not value:
+                raise ValueError("Brak danych wejściowych w pliku!")
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
-                value = 0
+                try:
+                    value = float(value)
+                except ValueError:
+                    value = 0
+        except ValueError as e:
+            print(f"Błąd: {e}")
+            value = 0
         self.variable_memory.assign_variable(identifier, value)
 
     def visitWrite(self, ctx: grammarGPParser.WriteContext):
+        if self.output_count >= self.max_output:
+            raise Exception("Przekroczono maksymalny limit danych wyjściowych!")
         value = self.visit(ctx.expression())
         self.out_file.write(str(value) + "\n")
+        self.output_count += 1
 
     def visitExpression(self, ctx: grammarGPParser.ExpressionContext):
         return self.visit(ctx.logicalOrExpression())
