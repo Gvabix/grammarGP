@@ -1,0 +1,22 @@
+{
+    a = 5;
+    b = 10.5;
+    result = 0;
+}
+
+while (a < 10) {
+    if (b > 5) {
+        result = result + 1;
+        write(result);
+    } else {
+        result = result - 1;
+        write(result);
+    }
+    a = a + 1;
+    b = b-3;
+}
+
+write(result);
+write(a);
+write(b);
+
