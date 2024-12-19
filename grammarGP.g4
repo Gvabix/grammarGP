@@ -1,26 +1,33 @@
 grammar grammarGP;
 
-program     : statement* EOF;
+program     : assignmentStatement+ statement* EOF;
 
-block       : LBRACE statement* RBRACE;
-
-statement   : assignmentStatement SEMI
+statement   : assignmentStatement
             | loopStatement
+            | ifStatement
+            | read
+            | write
+            ;
+
+block : LBRACE loopStatementContent* RBRACE ;
+
+assignmentStatement
+            : typeSpecifier? identifier (ASSIGN expression)? SEMI;
+
+ifStatement : IF LPAREN expression RPAREN block (ELSE LBRACE loopStatementContent* RBRACE)?;
+
+loopStatement
+            : WHILE LPAREN expression RPAREN block;
+
+
+loopStatementContent
+            : assignmentStatement
             | ifStatement
             | read
             | write
             | breakStatement
             | continueStatement
-            | block
             ;
-
-assignmentStatement
-            : identifier ASSIGN expression;
-
-ifStatement : IF LPAREN expression RPAREN statement (ELSE statement)?;
-
-loopStatement
-            : WHILE LPAREN expression RPAREN block;
 
 breakStatement : BREAK SEMI;
 

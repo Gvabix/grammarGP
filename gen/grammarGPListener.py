@@ -1,4 +1,4 @@
-# Generated from C:/Users/emili/Desktop/gene2/grammarGP/grammarGP.g4 by ANTLR 4.13.2
+# Generated from grammarGP.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .grammarGPParser import grammarGPParser
@@ -17,21 +17,21 @@ class grammarGPListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by grammarGPParser#block.
-    def enterBlock(self, ctx:grammarGPParser.BlockContext):
-        pass
-
-    # Exit a parse tree produced by grammarGPParser#block.
-    def exitBlock(self, ctx:grammarGPParser.BlockContext):
-        pass
-
-
     # Enter a parse tree produced by grammarGPParser#statement.
     def enterStatement(self, ctx:grammarGPParser.StatementContext):
         pass
 
     # Exit a parse tree produced by grammarGPParser#statement.
     def exitStatement(self, ctx:grammarGPParser.StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by grammarGPParser#block.
+    def enterBlock(self, ctx:grammarGPParser.BlockContext):
+        pass
+
+    # Exit a parse tree produced by grammarGPParser#block.
+    def exitBlock(self, ctx:grammarGPParser.BlockContext):
         pass
 
 
@@ -59,6 +59,15 @@ class grammarGPListener(ParseTreeListener):
 
     # Exit a parse tree produced by grammarGPParser#loopStatement.
     def exitLoopStatement(self, ctx:grammarGPParser.LoopStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by grammarGPParser#loopStatementContent.
+    def enterLoopStatementContent(self, ctx:grammarGPParser.LoopStatementContentContext):
+        pass
+
+    # Exit a parse tree produced by grammarGPParser#loopStatementContent.
+    def exitLoopStatementContent(self, ctx:grammarGPParser.LoopStatementContentContext):
         pass
 
 

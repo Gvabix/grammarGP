@@ -33,23 +33,27 @@ class GrammarGP:
 
     def generate_program(self, depth: int = 0) -> Node:
         program = Node('program', '')
-        num_statements = random.randint(3, 6)
 
-        for _ in range(num_statements):
+        # Pierwsza instrukcja to zawsze assignmentStatement
+        initial_assignment = self.generate_assignment()
+        program.children.append(initial_assignment)
+
+        # Reszta programu: losowe instrukcje zgodne z gramatyką
+        num_statements = random.randint(3, 6)  # Liczba pozostałych instrukcji
+        for _ in range(num_statements - 1):
             statement = self.generate_statement(depth + 1)
-            # Upewnij się, że program zawiera operację wyjścia (write)
-            if isinstance(statement, Node) and statement.type != 'write' and random.random() < 0.3:
-                program.children.append(self.generate_write(depth))  #
             program.children.append(statement)
 
         return program
 
-
-    def generate_block(self, depth: int) -> Node:
+    def generate_block(self, depth: int, in_loop: bool = False) -> Node:
+        """
+        Generate a block of statements.
+        """
         block = Node('block', '{')
         num_statements = random.randint(1, 3)
         for _ in range(num_statements):
-            block.children.append(self.generate_statement(depth + 1))
+            block.children.append(self.generate_statement(depth + 1, in_loop=in_loop))
         return block
 
     def generate_assignment(self) -> Node:
@@ -61,34 +65,35 @@ class GrammarGP:
         ])
 
     def generate_expression(self, depth: int) -> Node:
-
         if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
-                # Terminal: literal or identifier
+            # Terminal: literal or identifier
             return self.generate_literal_or_identifier()
 
-            # Non-terminal: binary operator expression
+        # Non-terminal: binary operator expression
         expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
         operator = random.choice(self.operators[expr_type])
 
-            # Recursive call to generate left and right subtrees
+        # Recursive call to generate left and right subtrees
         left_expr = self.generate_expression(depth + 1)
         right_expr = self.generate_expression(depth + 1)
 
         return Node('expression', operator, [left_expr, right_expr])
 
-    def generate_statement(self, depth: int) -> Node:
-
+    def generate_statement(self, depth: int, in_loop: bool = False) -> Node:
+        """
+        Generate a statement, optionally specifying if it's inside a loop.
+        """
         if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
             return self.generate_assignment()
 
-        statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write', 'break', 'continue', 'block'])
+        statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write'] + (['break', 'continue'] if in_loop else []))
 
         if statement_type == 'assignment':
             return self.generate_assignment()
         elif statement_type == 'loop':
             return self.generate_loop(depth)
         elif statement_type == 'if':
-            return self.generate_if(depth)
+            return self.generate_if(depth, in_loop)
         elif statement_type == 'read':
             return self.generate_read()
         elif statement_type == 'write':
@@ -97,17 +102,17 @@ class GrammarGP:
             return Node('breakStatement', 'break')
         elif statement_type == 'continue':
             return Node('continueStatement', 'continue')
-        elif statement_type == 'block':
-            return self.generate_block(depth)
 
-
-    def generate_if(self, depth: int) -> Node:
+    def generate_if(self, depth: int, in_loop: bool = False) -> Node:
+        """
+        Generate an if statement, optionally inside a loop.
+        """
         node = Node('ifStatement', 'if', [
             self.generate_expression(depth + 1),
-            self.generate_statement(depth + 1)
+            self.generate_block(depth + 1, in_loop=in_loop)
         ])
         if random.random() < 0.5:
-            node.children.append(self.generate_statement(depth + 1))
+            node.children.append(self.generate_block(depth + 1, in_loop=in_loop))
         return node
 
     def generate_loop(self, depth: int) -> Node:
@@ -257,4 +262,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

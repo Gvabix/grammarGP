@@ -35,6 +35,8 @@ class VariableMemory:
             raise Exception(f"Variable '{name}' is not defined.")
 
 
+import random
+
 class InterpreterVisitor(grammarGPVisitor):
     def __init__(self, in_path: str, out_path: str, max_instructions: int = 1000, max_output: int = 100):
         super().__init__()
@@ -122,7 +124,15 @@ class InterpreterVisitor(grammarGPVisitor):
 
     def visitPrimaryExpression(self, ctx: grammarGPParser.PrimaryExpressionContext):
         if ctx.identifier():
-            return self.variable_memory.get_variable_value(ctx.identifier().getText())
+            identifier = ctx.identifier().getText()
+            # Jeśli zmienna nie została zadeklarowana, przypisz jej losową wartość
+            try:
+                return self.variable_memory.get_variable_value(identifier)
+            except Exception:
+                # Losowa wartość w zakresie -100 do 100
+                random_value = random.randint(-100, 100)
+                self.variable_memory.assign_variable(identifier, random_value)
+                return random_value
         elif ctx.literal():
             if ctx.literal().INTEGER_LITERAL():
                 return int(ctx.literal().getText())

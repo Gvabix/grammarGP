@@ -6,8 +6,8 @@ from gen.grammarGPParser import grammarGPParser
 
 
 def main():
-    input_file = "input.txt"
-    output_file = "output.txt"
+    input_file = "in.txt"
+    output_file = "out.txt"
 
     lexer = grammarGPLexer(FileStream(input_file))
     stream = CommonTokenStream(lexer)

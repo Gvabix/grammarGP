@@ -3,7 +3,7 @@ from antlr4 import *
 if "." in __name__:
     from .grammarGPParser import grammarGPParser
 else:
-    from grammarGPParser import grammarGPParser
+    from gen.grammarGPParser import grammarGPParser
 
 # This class defines a complete generic visitor for a parse tree produced by grammarGPParser.
 

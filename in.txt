@@ -1,22 +1,4 @@
-
-    a = 5;
-    b = 10.5;
-    result = 0;
-
-
-while (a < 10) {
-    if (b > 5) {
-        result = result + 1;
-        write(result);
-    } else {
-        result = result - 1;
-        write(result);
-    }
-    a = a + 1;
-    b = b-3;
-}
-
-write(result);
-write(a);
-write(b);
-
+var_5 = ((((var_5 - var_4) || var_3) >= ((42 == 48.37) + var_2)) / (48.37 > ((var_4 && 42) || var_1)));
+read(var_5);
+while (((var_3 == var_5) || var_0)) {
+    var_4 = ((((var_2 == 42) - (42 / 48.37)) + (var_3 == 42)) < ((var_2 || var_2) - var_3));}
