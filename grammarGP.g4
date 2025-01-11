@@ -1,6 +1,6 @@
 grammar grammarGP;
 
-program     : assignmentStatement+ statement* EOF;
+program     :  statement* EOF;
 
 statement   : assignmentStatement
             | loopStatement
@@ -12,7 +12,7 @@ statement   : assignmentStatement
 block : LBRACE loopStatementContent* RBRACE ;
 
 assignmentStatement
-            : typeSpecifier? identifier (ASSIGN expression)? SEMI;
+            : typeSpecifier? identifier ASSIGN expression SEMI;
 
 ifStatement : IF LPAREN expression RPAREN block (ELSE LBRACE loopStatementContent* RBRACE)?;
 
@@ -27,6 +27,7 @@ loopStatementContent
             | write
             | breakStatement
             | continueStatement
+            | loopStatement
             ;
 
 breakStatement : BREAK SEMI;

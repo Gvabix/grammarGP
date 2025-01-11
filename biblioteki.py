@@ -33,12 +33,6 @@ class GrammarGP:
 
     def generate_program(self, depth: int = 0) -> Node:
         program = Node('program', '')
-
-        # Pierwsza instrukcja to zawsze assignmentStatement
-        initial_assignment = self.generate_assignment()
-        program.children.append(initial_assignment)
-
-        # Reszta programu: losowe instrukcje zgodne z gramatyką
         num_statements = random.randint(3, 6)  # Liczba pozostałych instrukcji
         for _ in range(num_statements - 1):
             statement = self.generate_statement(depth + 1)
@@ -46,73 +40,87 @@ class GrammarGP:
 
         return program
 
-    def generate_block(self, depth: int, in_loop: bool = False) -> Node:
-        """
-        Generate a block of statements.
-        """
+    def generate_block(self, depth: int) -> Node:
+        # Jeśli osiągnięto max_depth, generujemy tylko przypisanie
+        if depth >= self.max_depth:
+            return self.generate_assignment(depth)
+
         block = Node('block', '{')
+        # Liczba instrukcji w bloku
         num_statements = random.randint(1, 3)
+
         for _ in range(num_statements):
-            block.children.append(self.generate_statement(depth + 1, in_loop=in_loop))
+            statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write', 'break', 'continue'])
+
+            if statement_type == 'assignment':
+                block.children.append(self.generate_assignment(depth + 1))
+            elif statement_type == 'loop':
+                block.children.append(self.generate_loop(depth + 1))
+            elif statement_type == 'if':
+                block.children.append(self.generate_if(depth + 1))
+            elif statement_type == 'read':
+                block.children.append(self.generate_read())
+            elif statement_type == 'write':
+                block.children.append(self.generate_write(depth + 1))
+            elif statement_type == 'break':
+                block.children.append(self.generate_break())
+            elif statement_type == 'continue':
+                block.children.append(self.generate_continue())
+
         return block
 
-    def generate_assignment(self) -> Node:
+    def generate_break(self) -> Node:
+        return Node('breakStatement', 'break')
+
+    def generate_continue(self) -> Node:
+        return Node('continueStatement', 'continue')
+
+    def generate_assignment(self, depth: int) -> Node:
         var = random.choice(self.variables)
-        expression = self.generate_expression(0)
+        expression = self.generate_expression(depth + 1)
         return Node('assignmentStatement', '=', [
             Node('identifier', var),
             expression
         ])
 
     def generate_expression(self, depth: int) -> Node:
-        if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
-            # Terminal: literal or identifier
+        # Kontrolowanie głębokości wyrażenia
+        if depth >= self.max_depth:
             return self.generate_literal_or_identifier()
 
-        # Non-terminal: binary operator expression
         expr_type = random.choice(['arithmetic', 'logical', 'relational', 'equality'])
         operator = random.choice(self.operators[expr_type])
 
-        # Recursive call to generate left and right subtrees
         left_expr = self.generate_expression(depth + 1)
         right_expr = self.generate_expression(depth + 1)
 
         return Node('expression', operator, [left_expr, right_expr])
 
-    def generate_statement(self, depth: int, in_loop: bool = False) -> Node:
-        """
-        Generate a statement, optionally specifying if it's inside a loop.
-        """
-        if depth >= self.max_depth or (depth >= self.min_depth and random.random() < 0.5):
-            return self.generate_assignment()
+    def generate_statement(self, depth: int) -> Node:
+        # Zapewnienie, że głębokość nie przekroczy max_depth
+        if depth >= self.max_depth:
+            return self.generate_assignment(depth)
 
-        statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write'] + (['break', 'continue'] if in_loop else []))
+        statement_type = random.choice(['assignment', 'loop', 'if', 'read', 'write'])
 
         if statement_type == 'assignment':
-            return self.generate_assignment()
+            return self.generate_assignment(depth)
         elif statement_type == 'loop':
             return self.generate_loop(depth)
         elif statement_type == 'if':
-            return self.generate_if(depth, in_loop)
+            return self.generate_if(depth)
         elif statement_type == 'read':
             return self.generate_read()
         elif statement_type == 'write':
             return self.generate_write(depth)
-        elif statement_type == 'break':
-            return Node('breakStatement', 'break')
-        elif statement_type == 'continue':
-            return Node('continueStatement', 'continue')
 
-    def generate_if(self, depth: int, in_loop: bool = False) -> Node:
-        """
-        Generate an if statement, optionally inside a loop.
-        """
+    def generate_if(self, depth: int) -> Node:
         node = Node('ifStatement', 'if', [
             self.generate_expression(depth + 1),
-            self.generate_block(depth + 1, in_loop=in_loop)
+            self.generate_block(depth + 1)
         ])
-        if random.random() < 0.5:
-            node.children.append(self.generate_block(depth + 1, in_loop=in_loop))
+
+        node.children.append(self.generate_block(depth + 1))
         return node
 
     def generate_loop(self, depth: int) -> Node:
@@ -143,7 +151,7 @@ class GrammarGP:
         if not nodes:
             return mutated
         node = random.choice(nodes)
-        if random.random() < self.mutation_rate:  # Mutation based on rate
+        if random.random() < self.mutation_rate:
             if node.type == 'literal':
                 node.value = str(random.choice(self.literals))
             elif node.type == 'identifier':
@@ -161,10 +169,11 @@ class GrammarGP:
         return nodes
 
     def to_code(self, node: Node, indent: int = 0) -> str:
-        indent_str = ' ' * (4 * indent)
+        indent_str = ' ' * (4 * indent)  # 4 spacje dla każdego poziomu wcięcia
         if node.type == 'program':
             return '\n'.join([self.to_code(child, indent) for child in node.children])
         elif node.type == 'block':
+            # Tworzenie bloku kodu, który będzie zaczynał się od '{' i kończył na '}'
             inner = '\n'.join([self.to_code(child, indent + 1) for child in node.children])
             return f"{indent_str}{{\n{inner}\n{indent_str}}}"
         elif node.type == 'assignmentStatement':
@@ -172,13 +181,27 @@ class GrammarGP:
         elif node.type == 'ifStatement':
             condition = self.to_code(node.children[0], 0)
             if_body = self.to_code(node.children[1], indent)
+
+            # Dodanie nawiasów klamrowych wokół ciała if, ale tylko jeśli blok jest pusty lub nie zawiera nawiasów
+            if not if_body.startswith("{"):
+                if_body = f"{{\n{if_body}\n{indent_str}}}"
+
             if len(node.children) > 2:
                 else_body = self.to_code(node.children[2], indent)
+                # Dodanie nawiasów klamrowych wokół ciała else, ale tylko jeśli blok jest pusty lub nie zawiera nawiasów
+                if not else_body.startswith("{"):
+                    else_body = f"{{\n{else_body}\n{indent_str}}}"
                 return f"{indent_str}if ({condition}) {if_body} else {else_body}"
+
             return f"{indent_str}if ({condition}) {if_body}"
         elif node.type == 'loopStatement':
             condition = self.to_code(node.children[0], 0)
             body = self.to_code(node.children[1], indent)
+
+            # Sprawdzanie, czy ciało pętli wymaga nawiasów klamrowych
+            if not body.startswith("{"):
+                body = f"{{\n{body}\n{indent_str}}}"
+
             return f"{indent_str}while ({condition}) {body}"
         elif node.type == 'write':
             return f"{indent_str}write({self.to_code(node.children[0], 0)});"
@@ -195,6 +218,8 @@ class GrammarGP:
         elif node.type in ['literal', 'identifier']:
             return node.value
         return ''
+
+
 
     def tournament_selection(self, population: List[Node], fitness_scores: List[float], tournament_size: int) -> Node:
         selected = random.sample(list(zip(population, fitness_scores)), tournament_size)
@@ -220,7 +245,7 @@ class GrammarGP:
                 break
 
 def main():
-    gp = GrammarGP(max_depth=4, min_depth=2, mutation_rate=0.25)
+    gp = GrammarGP(max_depth=4, min_depth=1, mutation_rate=0.25)
     population_size = 10
     generations = 10
     tournament_size = 2
@@ -262,3 +287,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
