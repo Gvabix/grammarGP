@@ -10,76 +10,75 @@ else:
 
 def serializedATN():
     return [
-        4,1,36,210,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,36,208,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
         1,0,5,0,56,8,0,10,0,12,0,59,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,3,1,
         68,8,1,1,2,1,2,5,2,72,8,2,10,2,12,2,75,9,2,1,2,1,2,1,3,3,3,80,8,
-        3,1,3,1,3,1,3,3,3,85,8,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,
-        5,4,97,8,4,10,4,12,4,100,9,4,1,4,3,4,103,8,4,1,5,1,5,1,5,1,5,1,5,
-        1,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,3,6,118,8,6,1,7,1,7,1,7,1,8,1,8,
-        1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,1,11,1,
-        11,1,11,1,11,1,11,1,11,1,11,3,11,145,8,11,1,12,1,12,1,12,1,12,3,
-        12,151,8,12,1,13,1,13,1,13,5,13,156,8,13,10,13,12,13,159,9,13,1,
-        14,1,14,1,14,5,14,164,8,14,10,14,12,14,167,9,14,1,15,1,15,1,15,1,
-        15,3,15,173,8,15,1,16,1,16,1,16,1,16,3,16,179,8,16,1,17,1,17,1,17,
-        3,17,184,8,17,1,18,1,18,1,18,3,18,189,8,18,1,19,1,19,1,20,1,20,1,
-        20,1,20,1,20,1,21,1,21,1,22,1,22,1,23,1,23,1,24,1,24,1,25,1,25,1,
-        26,1,26,1,26,0,0,27,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,
-        34,36,38,40,42,44,46,48,50,52,0,7,1,0,9,10,1,0,7,8,1,0,28,31,1,0,
-        26,27,2,0,7,8,32,32,1,0,13,14,1,0,24,25,208,0,57,1,0,0,0,2,67,1,
-        0,0,0,4,69,1,0,0,0,6,79,1,0,0,0,8,88,1,0,0,0,10,104,1,0,0,0,12,117,
-        1,0,0,0,14,119,1,0,0,0,16,122,1,0,0,0,18,125,1,0,0,0,20,131,1,0,
-        0,0,22,144,1,0,0,0,24,150,1,0,0,0,26,152,1,0,0,0,28,160,1,0,0,0,
-        30,168,1,0,0,0,32,174,1,0,0,0,34,180,1,0,0,0,36,185,1,0,0,0,38,190,
-        1,0,0,0,40,192,1,0,0,0,42,197,1,0,0,0,44,199,1,0,0,0,46,201,1,0,
-        0,0,48,203,1,0,0,0,50,205,1,0,0,0,52,207,1,0,0,0,54,56,3,2,1,0,55,
-        54,1,0,0,0,56,59,1,0,0,0,57,55,1,0,0,0,57,58,1,0,0,0,58,60,1,0,0,
-        0,59,57,1,0,0,0,60,61,5,0,0,1,61,1,1,0,0,0,62,68,3,6,3,0,63,68,3,
-        10,5,0,64,68,3,8,4,0,65,68,3,18,9,0,66,68,3,20,10,0,67,62,1,0,0,
-        0,67,63,1,0,0,0,67,64,1,0,0,0,67,65,1,0,0,0,67,66,1,0,0,0,68,3,1,
-        0,0,0,69,73,5,5,0,0,70,72,3,12,6,0,71,70,1,0,0,0,72,75,1,0,0,0,73,
-        71,1,0,0,0,73,74,1,0,0,0,74,76,1,0,0,0,75,73,1,0,0,0,76,77,5,6,0,
-        0,77,5,1,0,0,0,78,80,3,52,26,0,79,78,1,0,0,0,79,80,1,0,0,0,80,81,
-        1,0,0,0,81,84,3,50,25,0,82,83,5,11,0,0,83,85,3,38,19,0,84,82,1,0,
-        0,0,84,85,1,0,0,0,85,86,1,0,0,0,86,87,5,12,0,0,87,7,1,0,0,0,88,89,
-        5,15,0,0,89,90,5,3,0,0,90,91,3,38,19,0,91,92,5,4,0,0,92,102,3,4,
-        2,0,93,94,5,16,0,0,94,98,5,5,0,0,95,97,3,12,6,0,96,95,1,0,0,0,97,
-        100,1,0,0,0,98,96,1,0,0,0,98,99,1,0,0,0,99,101,1,0,0,0,100,98,1,
-        0,0,0,101,103,5,6,0,0,102,93,1,0,0,0,102,103,1,0,0,0,103,9,1,0,0,
-        0,104,105,5,17,0,0,105,106,5,3,0,0,106,107,3,38,19,0,107,108,5,4,
-        0,0,108,109,3,4,2,0,109,11,1,0,0,0,110,118,3,6,3,0,111,118,3,8,4,
-        0,112,118,3,18,9,0,113,118,3,20,10,0,114,118,3,14,7,0,115,118,3,
-        16,8,0,116,118,3,10,5,0,117,110,1,0,0,0,117,111,1,0,0,0,117,112,
-        1,0,0,0,117,113,1,0,0,0,117,114,1,0,0,0,117,115,1,0,0,0,117,116,
-        1,0,0,0,118,13,1,0,0,0,119,120,5,20,0,0,120,121,5,12,0,0,121,15,
-        1,0,0,0,122,123,5,21,0,0,123,124,5,12,0,0,124,17,1,0,0,0,125,126,
-        5,18,0,0,126,127,5,3,0,0,127,128,3,50,25,0,128,129,5,4,0,0,129,130,
-        5,12,0,0,130,19,1,0,0,0,131,132,5,19,0,0,132,133,5,3,0,0,133,134,
-        3,38,19,0,134,135,5,4,0,0,135,136,5,12,0,0,136,21,1,0,0,0,137,145,
-        3,48,24,0,138,145,3,50,25,0,139,145,3,40,20,0,140,141,5,3,0,0,141,
-        142,3,38,19,0,142,143,5,4,0,0,143,145,1,0,0,0,144,137,1,0,0,0,144,
-        138,1,0,0,0,144,139,1,0,0,0,144,140,1,0,0,0,145,23,1,0,0,0,146,147,
-        3,46,23,0,147,148,3,22,11,0,148,151,1,0,0,0,149,151,3,22,11,0,150,
-        146,1,0,0,0,150,149,1,0,0,0,151,25,1,0,0,0,152,157,3,24,12,0,153,
-        154,7,0,0,0,154,156,3,24,12,0,155,153,1,0,0,0,156,159,1,0,0,0,157,
-        155,1,0,0,0,157,158,1,0,0,0,158,27,1,0,0,0,159,157,1,0,0,0,160,165,
-        3,26,13,0,161,162,7,1,0,0,162,164,3,26,13,0,163,161,1,0,0,0,164,
-        167,1,0,0,0,165,163,1,0,0,0,165,166,1,0,0,0,166,29,1,0,0,0,167,165,
-        1,0,0,0,168,172,3,28,14,0,169,170,3,42,21,0,170,171,3,28,14,0,171,
-        173,1,0,0,0,172,169,1,0,0,0,172,173,1,0,0,0,173,31,1,0,0,0,174,178,
-        3,30,15,0,175,176,3,44,22,0,176,177,3,30,15,0,177,179,1,0,0,0,178,
-        175,1,0,0,0,178,179,1,0,0,0,179,33,1,0,0,0,180,183,3,32,16,0,181,
-        182,5,22,0,0,182,184,3,32,16,0,183,181,1,0,0,0,183,184,1,0,0,0,184,
-        35,1,0,0,0,185,188,3,34,17,0,186,187,5,23,0,0,187,189,3,34,17,0,
-        188,186,1,0,0,0,188,189,1,0,0,0,189,37,1,0,0,0,190,191,3,36,18,0,
-        191,39,1,0,0,0,192,193,3,52,26,0,193,194,5,3,0,0,194,195,3,38,19,
-        0,195,196,5,4,0,0,196,41,1,0,0,0,197,198,7,2,0,0,198,43,1,0,0,0,
-        199,200,7,3,0,0,200,45,1,0,0,0,201,202,7,4,0,0,202,47,1,0,0,0,203,
-        204,7,5,0,0,204,49,1,0,0,0,205,206,5,33,0,0,206,51,1,0,0,0,207,208,
-        7,6,0,0,208,53,1,0,0,0,16,57,67,73,79,84,98,102,117,144,150,157,
-        165,172,178,183,188
+        3,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,95,8,4,
+        10,4,12,4,98,9,4,1,4,3,4,101,8,4,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,
+        1,6,1,6,1,6,1,6,1,6,3,6,116,8,6,1,7,1,7,1,7,1,8,1,8,1,8,1,9,1,9,
+        1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,1,11,1,11,1,11,1,11,
+        1,11,1,11,1,11,3,11,143,8,11,1,12,1,12,1,12,1,12,3,12,149,8,12,1,
+        13,1,13,1,13,5,13,154,8,13,10,13,12,13,157,9,13,1,14,1,14,1,14,5,
+        14,162,8,14,10,14,12,14,165,9,14,1,15,1,15,1,15,1,15,3,15,171,8,
+        15,1,16,1,16,1,16,1,16,3,16,177,8,16,1,17,1,17,1,17,3,17,182,8,17,
+        1,18,1,18,1,18,3,18,187,8,18,1,19,1,19,1,20,1,20,1,20,1,20,1,20,
+        1,21,1,21,1,22,1,22,1,23,1,23,1,24,1,24,1,25,1,25,1,26,1,26,1,26,
+        0,0,27,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,
+        42,44,46,48,50,52,0,7,1,0,9,10,1,0,7,8,1,0,28,31,1,0,26,27,2,0,7,
+        8,32,32,1,0,13,14,1,0,24,25,205,0,57,1,0,0,0,2,67,1,0,0,0,4,69,1,
+        0,0,0,6,79,1,0,0,0,8,86,1,0,0,0,10,102,1,0,0,0,12,115,1,0,0,0,14,
+        117,1,0,0,0,16,120,1,0,0,0,18,123,1,0,0,0,20,129,1,0,0,0,22,142,
+        1,0,0,0,24,148,1,0,0,0,26,150,1,0,0,0,28,158,1,0,0,0,30,166,1,0,
+        0,0,32,172,1,0,0,0,34,178,1,0,0,0,36,183,1,0,0,0,38,188,1,0,0,0,
+        40,190,1,0,0,0,42,195,1,0,0,0,44,197,1,0,0,0,46,199,1,0,0,0,48,201,
+        1,0,0,0,50,203,1,0,0,0,52,205,1,0,0,0,54,56,3,2,1,0,55,54,1,0,0,
+        0,56,59,1,0,0,0,57,55,1,0,0,0,57,58,1,0,0,0,58,60,1,0,0,0,59,57,
+        1,0,0,0,60,61,5,0,0,1,61,1,1,0,0,0,62,68,3,6,3,0,63,68,3,10,5,0,
+        64,68,3,8,4,0,65,68,3,18,9,0,66,68,3,20,10,0,67,62,1,0,0,0,67,63,
+        1,0,0,0,67,64,1,0,0,0,67,65,1,0,0,0,67,66,1,0,0,0,68,3,1,0,0,0,69,
+        73,5,5,0,0,70,72,3,12,6,0,71,70,1,0,0,0,72,75,1,0,0,0,73,71,1,0,
+        0,0,73,74,1,0,0,0,74,76,1,0,0,0,75,73,1,0,0,0,76,77,5,6,0,0,77,5,
+        1,0,0,0,78,80,3,52,26,0,79,78,1,0,0,0,79,80,1,0,0,0,80,81,1,0,0,
+        0,81,82,3,50,25,0,82,83,5,11,0,0,83,84,3,38,19,0,84,85,5,12,0,0,
+        85,7,1,0,0,0,86,87,5,15,0,0,87,88,5,3,0,0,88,89,3,38,19,0,89,90,
+        5,4,0,0,90,100,3,4,2,0,91,92,5,16,0,0,92,96,5,5,0,0,93,95,3,12,6,
+        0,94,93,1,0,0,0,95,98,1,0,0,0,96,94,1,0,0,0,96,97,1,0,0,0,97,99,
+        1,0,0,0,98,96,1,0,0,0,99,101,5,6,0,0,100,91,1,0,0,0,100,101,1,0,
+        0,0,101,9,1,0,0,0,102,103,5,17,0,0,103,104,5,3,0,0,104,105,3,38,
+        19,0,105,106,5,4,0,0,106,107,3,4,2,0,107,11,1,0,0,0,108,116,3,6,
+        3,0,109,116,3,8,4,0,110,116,3,18,9,0,111,116,3,20,10,0,112,116,3,
+        14,7,0,113,116,3,16,8,0,114,116,3,10,5,0,115,108,1,0,0,0,115,109,
+        1,0,0,0,115,110,1,0,0,0,115,111,1,0,0,0,115,112,1,0,0,0,115,113,
+        1,0,0,0,115,114,1,0,0,0,116,13,1,0,0,0,117,118,5,20,0,0,118,119,
+        5,12,0,0,119,15,1,0,0,0,120,121,5,21,0,0,121,122,5,12,0,0,122,17,
+        1,0,0,0,123,124,5,18,0,0,124,125,5,3,0,0,125,126,3,50,25,0,126,127,
+        5,4,0,0,127,128,5,12,0,0,128,19,1,0,0,0,129,130,5,19,0,0,130,131,
+        5,3,0,0,131,132,3,38,19,0,132,133,5,4,0,0,133,134,5,12,0,0,134,21,
+        1,0,0,0,135,143,3,48,24,0,136,143,3,50,25,0,137,143,3,40,20,0,138,
+        139,5,3,0,0,139,140,3,38,19,0,140,141,5,4,0,0,141,143,1,0,0,0,142,
+        135,1,0,0,0,142,136,1,0,0,0,142,137,1,0,0,0,142,138,1,0,0,0,143,
+        23,1,0,0,0,144,145,3,46,23,0,145,146,3,22,11,0,146,149,1,0,0,0,147,
+        149,3,22,11,0,148,144,1,0,0,0,148,147,1,0,0,0,149,25,1,0,0,0,150,
+        155,3,24,12,0,151,152,7,0,0,0,152,154,3,24,12,0,153,151,1,0,0,0,
+        154,157,1,0,0,0,155,153,1,0,0,0,155,156,1,0,0,0,156,27,1,0,0,0,157,
+        155,1,0,0,0,158,163,3,26,13,0,159,160,7,1,0,0,160,162,3,26,13,0,
+        161,159,1,0,0,0,162,165,1,0,0,0,163,161,1,0,0,0,163,164,1,0,0,0,
+        164,29,1,0,0,0,165,163,1,0,0,0,166,170,3,28,14,0,167,168,3,42,21,
+        0,168,169,3,28,14,0,169,171,1,0,0,0,170,167,1,0,0,0,170,171,1,0,
+        0,0,171,31,1,0,0,0,172,176,3,30,15,0,173,174,3,44,22,0,174,175,3,
+        30,15,0,175,177,1,0,0,0,176,173,1,0,0,0,176,177,1,0,0,0,177,33,1,
+        0,0,0,178,181,3,32,16,0,179,180,5,22,0,0,180,182,3,32,16,0,181,179,
+        1,0,0,0,181,182,1,0,0,0,182,35,1,0,0,0,183,186,3,34,17,0,184,185,
+        5,23,0,0,185,187,3,34,17,0,186,184,1,0,0,0,186,187,1,0,0,0,187,37,
+        1,0,0,0,188,189,3,36,18,0,189,39,1,0,0,0,190,191,3,52,26,0,191,192,
+        5,3,0,0,192,193,3,38,19,0,193,194,5,4,0,0,194,41,1,0,0,0,195,196,
+        7,2,0,0,196,43,1,0,0,0,197,198,7,3,0,0,198,45,1,0,0,0,199,200,7,
+        4,0,0,200,47,1,0,0,0,201,202,7,5,0,0,202,49,1,0,0,0,203,204,5,33,
+        0,0,204,51,1,0,0,0,205,206,7,6,0,0,206,53,1,0,0,0,15,57,67,73,79,
+        96,100,115,142,148,155,163,170,176,181,186
     ]
 
 class grammarGPParser ( Parser ):
@@ -218,6 +217,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitProgram" ):
                 listener.exitProgram(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProgram" ):
+                return visitor.visitProgram(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -286,6 +291,12 @@ class grammarGPParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStatement" ):
                 listener.exitStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStatement" ):
+                return visitor.visitStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -366,6 +377,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitBlock" ):
                 listener.exitBlock(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBlock" ):
+                return visitor.visitBlock(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -410,18 +427,18 @@ class grammarGPParser ( Parser ):
             return self.getTypedRuleContext(grammarGPParser.IdentifierContext,0)
 
 
-        def SEMI(self):
-            return self.getToken(grammarGPParser.SEMI, 0)
-
-        def typeSpecifier(self):
-            return self.getTypedRuleContext(grammarGPParser.TypeSpecifierContext,0)
-
-
         def ASSIGN(self):
             return self.getToken(grammarGPParser.ASSIGN, 0)
 
         def expression(self):
             return self.getTypedRuleContext(grammarGPParser.ExpressionContext,0)
+
+
+        def SEMI(self):
+            return self.getToken(grammarGPParser.SEMI, 0)
+
+        def typeSpecifier(self):
+            return self.getTypedRuleContext(grammarGPParser.TypeSpecifierContext,0)
 
 
         def getRuleIndex(self):
@@ -434,6 +451,12 @@ class grammarGPParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAssignmentStatement" ):
                 listener.exitAssignmentStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssignmentStatement" ):
+                return visitor.visitAssignmentStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -455,17 +478,11 @@ class grammarGPParser ( Parser ):
 
             self.state = 81
             self.identifier()
+            self.state = 82
+            self.match(grammarGPParser.ASSIGN)
+            self.state = 83
+            self.expression()
             self.state = 84
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if _la==11:
-                self.state = 82
-                self.match(grammarGPParser.ASSIGN)
-                self.state = 83
-                self.expression()
-
-
-            self.state = 86
             self.match(grammarGPParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
@@ -527,6 +544,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitIfStatement" ):
                 listener.exitIfStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfStatement" ):
+                return visitor.visitIfStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -537,35 +560,35 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
+            self.state = 86
             self.match(grammarGPParser.IF)
-            self.state = 89
+            self.state = 87
             self.match(grammarGPParser.LPAREN)
-            self.state = 90
+            self.state = 88
             self.expression()
-            self.state = 91
+            self.state = 89
             self.match(grammarGPParser.RPAREN)
-            self.state = 92
+            self.state = 90
             self.block()
-            self.state = 102
+            self.state = 100
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==16:
-                self.state = 93
+                self.state = 91
                 self.match(grammarGPParser.ELSE)
-                self.state = 94
+                self.state = 92
                 self.match(grammarGPParser.LBRACE)
-                self.state = 98
+                self.state = 96
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while (((_la) & ~0x3f) == 0 and ((1 << _la) & 8644362240) != 0):
-                    self.state = 95
+                    self.state = 93
                     self.loopStatementContent()
-                    self.state = 100
+                    self.state = 98
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 101
+                self.state = 99
                 self.match(grammarGPParser.RBRACE)
 
 
@@ -613,6 +636,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitLoopStatement" ):
                 listener.exitLoopStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLoopStatement" ):
+                return visitor.visitLoopStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -622,15 +651,15 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_loopStatement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 104
+            self.state = 102
             self.match(grammarGPParser.WHILE)
-            self.state = 105
+            self.state = 103
             self.match(grammarGPParser.LPAREN)
-            self.state = 106
+            self.state = 104
             self.expression()
-            self.state = 107
+            self.state = 105
             self.match(grammarGPParser.RPAREN)
-            self.state = 108
+            self.state = 106
             self.block()
         except RecognitionException as re:
             localctx.exception = re
@@ -687,6 +716,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitLoopStatementContent" ):
                 listener.exitLoopStatementContent(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLoopStatementContent" ):
+                return visitor.visitLoopStatementContent(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -695,42 +730,42 @@ class grammarGPParser ( Parser ):
         localctx = grammarGPParser.LoopStatementContentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_loopStatementContent)
         try:
-            self.state = 117
+            self.state = 115
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [24, 25, 33]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 110
+                self.state = 108
                 self.assignmentStatement()
                 pass
             elif token in [15]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 111
+                self.state = 109
                 self.ifStatement()
                 pass
             elif token in [18]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 112
+                self.state = 110
                 self.read()
                 pass
             elif token in [19]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 113
+                self.state = 111
                 self.write()
                 pass
             elif token in [20]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 114
+                self.state = 112
                 self.breakStatement()
                 pass
             elif token in [21]:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 115
+                self.state = 113
                 self.continueStatement()
                 pass
             elif token in [17]:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 116
+                self.state = 114
                 self.loopStatement()
                 pass
             else:
@@ -769,6 +804,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitBreakStatement" ):
                 listener.exitBreakStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBreakStatement" ):
+                return visitor.visitBreakStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -778,9 +819,9 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_breakStatement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 119
+            self.state = 117
             self.match(grammarGPParser.BREAK)
-            self.state = 120
+            self.state = 118
             self.match(grammarGPParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
@@ -815,6 +856,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitContinueStatement" ):
                 listener.exitContinueStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitContinueStatement" ):
+                return visitor.visitContinueStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -824,9 +871,9 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_continueStatement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 122
+            self.state = 120
             self.match(grammarGPParser.CONTINUE)
-            self.state = 123
+            self.state = 121
             self.match(grammarGPParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
@@ -871,6 +918,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitRead" ):
                 listener.exitRead(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRead" ):
+                return visitor.visitRead(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -880,15 +933,15 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_read)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 125
+            self.state = 123
             self.match(grammarGPParser.READ)
-            self.state = 126
+            self.state = 124
             self.match(grammarGPParser.LPAREN)
-            self.state = 127
+            self.state = 125
             self.identifier()
-            self.state = 128
+            self.state = 126
             self.match(grammarGPParser.RPAREN)
-            self.state = 129
+            self.state = 127
             self.match(grammarGPParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
@@ -933,6 +986,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitWrite" ):
                 listener.exitWrite(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWrite" ):
+                return visitor.visitWrite(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -942,15 +1001,15 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_write)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 131
+            self.state = 129
             self.match(grammarGPParser.WRITE)
-            self.state = 132
+            self.state = 130
             self.match(grammarGPParser.LPAREN)
-            self.state = 133
+            self.state = 131
             self.expression()
-            self.state = 134
+            self.state = 132
             self.match(grammarGPParser.RPAREN)
-            self.state = 135
+            self.state = 133
             self.match(grammarGPParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
@@ -1001,6 +1060,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitPrimaryExpression" ):
                 listener.exitPrimaryExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrimaryExpression" ):
+                return visitor.visitPrimaryExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1009,31 +1074,31 @@ class grammarGPParser ( Parser ):
         localctx = grammarGPParser.PrimaryExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_primaryExpression)
         try:
-            self.state = 144
+            self.state = 142
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [13, 14]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 137
+                self.state = 135
                 self.literal()
                 pass
             elif token in [33]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 138
+                self.state = 136
                 self.identifier()
                 pass
             elif token in [24, 25]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 139
+                self.state = 137
                 self.castExpression()
                 pass
             elif token in [3]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 140
+                self.state = 138
                 self.match(grammarGPParser.LPAREN)
-                self.state = 141
+                self.state = 139
                 self.expression()
-                self.state = 142
+                self.state = 140
                 self.match(grammarGPParser.RPAREN)
                 pass
             else:
@@ -1074,6 +1139,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitUnaryExpression" ):
                 listener.exitUnaryExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryExpression" ):
+                return visitor.visitUnaryExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1082,19 +1153,19 @@ class grammarGPParser ( Parser ):
         localctx = grammarGPParser.UnaryExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_unaryExpression)
         try:
-            self.state = 150
+            self.state = 148
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [7, 8, 32]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 146
+                self.state = 144
                 self.unaryOperator()
-                self.state = 147
+                self.state = 145
                 self.primaryExpression()
                 pass
             elif token in [3, 13, 14, 24, 25, 33]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 149
+                self.state = 147
                 self.primaryExpression()
                 pass
             else:
@@ -1146,6 +1217,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitMultiplicativeExpression" ):
                 listener.exitMultiplicativeExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMultiplicativeExpression" ):
+                return visitor.visitMultiplicativeExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1156,22 +1233,22 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 152
+            self.state = 150
             self.unaryExpression()
-            self.state = 157
+            self.state = 155
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==9 or _la==10:
-                self.state = 153
+                self.state = 151
                 _la = self._input.LA(1)
                 if not(_la==9 or _la==10):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 154
+                self.state = 152
                 self.unaryExpression()
-                self.state = 159
+                self.state = 157
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1221,6 +1298,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitAdditiveExpression" ):
                 listener.exitAdditiveExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdditiveExpression" ):
+                return visitor.visitAdditiveExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1231,22 +1314,22 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 160
+            self.state = 158
             self.multiplicativeExpression()
-            self.state = 165
+            self.state = 163
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==7 or _la==8:
-                self.state = 161
+                self.state = 159
                 _la = self._input.LA(1)
                 if not(_la==7 or _la==8):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 162
+                self.state = 160
                 self.multiplicativeExpression()
-                self.state = 167
+                self.state = 165
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1288,6 +1371,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitRelationalExpression" ):
                 listener.exitRelationalExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelationalExpression" ):
+                return visitor.visitRelationalExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1298,15 +1387,15 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 168
+            self.state = 166
             self.additiveExpression()
-            self.state = 172
+            self.state = 170
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 4026531840) != 0):
-                self.state = 169
+                self.state = 167
                 self.relation()
-                self.state = 170
+                self.state = 168
                 self.additiveExpression()
 
 
@@ -1348,6 +1437,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitEqualityExpression" ):
                 listener.exitEqualityExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEqualityExpression" ):
+                return visitor.visitEqualityExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1358,15 +1453,15 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 174
+            self.state = 172
             self.relationalExpression()
-            self.state = 178
+            self.state = 176
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==26 or _la==27:
-                self.state = 175
+                self.state = 173
                 self.equalityRelation()
-                self.state = 176
+                self.state = 174
                 self.relationalExpression()
 
 
@@ -1407,6 +1502,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitLogicalAndExpression" ):
                 listener.exitLogicalAndExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogicalAndExpression" ):
+                return visitor.visitLogicalAndExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1417,15 +1518,15 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 180
+            self.state = 178
             self.equalityExpression()
-            self.state = 183
+            self.state = 181
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==22:
-                self.state = 181
+                self.state = 179
                 self.match(grammarGPParser.AND)
-                self.state = 182
+                self.state = 180
                 self.equalityExpression()
 
 
@@ -1466,6 +1567,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitLogicalOrExpression" ):
                 listener.exitLogicalOrExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogicalOrExpression" ):
+                return visitor.visitLogicalOrExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1476,15 +1583,15 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 185
+            self.state = 183
             self.logicalAndExpression()
-            self.state = 188
+            self.state = 186
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==23:
-                self.state = 186
+                self.state = 184
                 self.match(grammarGPParser.OR)
-                self.state = 187
+                self.state = 185
                 self.logicalAndExpression()
 
 
@@ -1519,6 +1626,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitExpression" ):
                 listener.exitExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpression" ):
+                return visitor.visitExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1528,7 +1641,7 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 38, self.RULE_expression)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 190
+            self.state = 188
             self.logicalOrExpression()
         except RecognitionException as re:
             localctx.exception = re
@@ -1571,6 +1684,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitCastExpression" ):
                 listener.exitCastExpression(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCastExpression" ):
+                return visitor.visitCastExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1580,13 +1699,13 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_castExpression)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 192
+            self.state = 190
             self.typeSpecifier()
-            self.state = 193
+            self.state = 191
             self.match(grammarGPParser.LPAREN)
-            self.state = 194
+            self.state = 192
             self.expression()
-            self.state = 195
+            self.state = 193
             self.match(grammarGPParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -1627,6 +1746,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitRelation" ):
                 listener.exitRelation(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation" ):
+                return visitor.visitRelation(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1637,7 +1762,7 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 197
+            self.state = 195
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 4026531840) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1677,6 +1802,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitEqualityRelation" ):
                 listener.exitEqualityRelation(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEqualityRelation" ):
+                return visitor.visitEqualityRelation(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1687,7 +1818,7 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 199
+            self.state = 197
             _la = self._input.LA(1)
             if not(_la==26 or _la==27):
                 self._errHandler.recoverInline(self)
@@ -1730,6 +1861,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitUnaryOperator" ):
                 listener.exitUnaryOperator(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryOperator" ):
+                return visitor.visitUnaryOperator(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1740,7 +1877,7 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 201
+            self.state = 199
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 4294967680) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1780,6 +1917,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitLiteral" ):
                 listener.exitLiteral(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteral" ):
+                return visitor.visitLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1790,7 +1933,7 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 203
+            self.state = 201
             _la = self._input.LA(1)
             if not(_la==13 or _la==14):
                 self._errHandler.recoverInline(self)
@@ -1827,6 +1970,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitIdentifier" ):
                 listener.exitIdentifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIdentifier" ):
+                return visitor.visitIdentifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1836,7 +1985,7 @@ class grammarGPParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_identifier)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 205
+            self.state = 203
             self.match(grammarGPParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re
@@ -1871,6 +2020,12 @@ class grammarGPParser ( Parser ):
             if hasattr( listener, "exitTypeSpecifier" ):
                 listener.exitTypeSpecifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeSpecifier" ):
+                return visitor.visitTypeSpecifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1881,7 +2036,7 @@ class grammarGPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 207
+            self.state = 205
             _la = self._input.LA(1)
             if not(_la==24 or _la==25):
                 self._errHandler.recoverInline(self)

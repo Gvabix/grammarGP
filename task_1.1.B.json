@@ -1,0 +1,307 @@
+{
+    "best_program_code": "write(((27 || 27) != (var_5 > var_2)));\nwrite(((27 * 27) / (var_2 != 33.99)));\nread(var_0);",
+    "best_fitness": 0.9619771863117871,
+    "generation_found": 1,
+    "generations": [
+        {
+            "generation": 1,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.5822623574144487,
+            "best_program_code": "write(((27 || 27) != (var_5 > var_2)));\nwrite(((27 * 27) / (var_2 != 33.99)));\nread(var_0);"
+        },
+        {
+            "generation": 2,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_5 != var_0) != (var_2 - 27))) {\n    read(var_3);\n    var_5 = 33.99;\n}\nread(var_2);\nwrite(((var_4 - 27) < (27 < var_2)));\nwrite(((27 > 33.99) || (var_4 <= var_0)));\nvar_5 = ((var_5 <= var_3) < (var_5 < var_2));"
+        },
+        {
+            "generation": 3,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((33.99 >= var_1) || (27 != var_4))) {\n    continue;\n}\nwhile (((33.99 / 33.99) || (27 || 27))) {\n    read(var_3);\n}"
+        },
+        {
+            "generation": 4,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_2);\nif (((33.99 == 27) <= (33.99 <= 33.99))) {\n    read(var_0);\n    read(var_5);\n} else {\n    if (27) {\n    var_3 = var_4;\n    }\n    read(var_3);\n    var_4 = 33.99;\n}"
+        },
+        {
+            "generation": 5,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_2);\nif (((33.99 == 27) <= (33.99 <= 33.99))) {\n    read(var_0);\n    read(var_5);\n} else {\n    if (27) {\n    var_3 = var_4;\n    }\n    read(var_3);\n    var_4 = 33.99;\n}"
+        },
+        {
+            "generation": 6,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_2 && 27) / (33.99 <= var_2)));\nwrite(((var_3 || 33.99) == (var_3 || 27)));\nwhile (((33.99 && 27) && (var_5 / var_0))) {\n    if (var_4) {\n    var_5 = 33.99;\n    }\n    continue;\n}\nread(var_4);\nwrite(((var_0 != var_3) && (33.99 != 27)));"
+        },
+        {
+            "generation": 7,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_0);\nif (((33.99 != var_5) <= (var_0 != var_0))) {\n    write(27);\n    var_4 = var_5;\n} else {\n    while (27) {\n    var_4 = var_2;\n    }\n    while (27) {\n    var_4 = 33.99;\n    }\n}"
+        },
+        {
+            "generation": 8,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_0);\nif (((33.99 != var_5) <= (var_0 != var_0))) {\n    write(27);\n    var_4 = var_5;\n} else {\n    while (27) {\n    var_4 = var_2;\n    }\n    while (27) {\n    var_4 = 33.99;\n    }\n}"
+        },
+        {
+            "generation": 9,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((var_4 != 27) != (27 + var_1))) {\n    if (33.99) {\n    var_2 = var_5;\n    }\n    continue;\n}\nwrite(((var_0 != var_1) * (33.99 >= var_1)));\nwhile (((var_3 != 33.99) != (var_4 - var_3))) {\n    while (27) {\n    var_1 = var_0;\n    }\n    continue;\n    var_4 = 33.99;\n}\nread(var_4);"
+        },
+        {
+            "generation": 10,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_0);\nwhile (((27 > var_2) - (27 && 33.99))) {\n    var_2 = var_1;\n}\nread(var_2);\nwrite(((27 + 33.99) && (27 * 27)));"
+        },
+        {
+            "generation": 11,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_0);\nwhile (((27 > var_2) - (27 && 33.99))) {\n    var_2 = var_1;\n}\nread(var_2);\nwrite(((27 + 33.99) && (27 * 27)));"
+        },
+        {
+            "generation": 12,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_4);\nread(var_1);\nif (((33.99 / var_4) * (27 + 27))) {\n    var_4 = 27;\n} else {\n    read(var_1);\n    break;\n    while (var_1) {\n    var_2 = var_3;\n    }\n}"
+        },
+        {
+            "generation": 13,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((27 && var_0) < (var_2 && var_1))) {\n    continue;\n    write(var_5);\n    read(var_4);\n} else {\n    var_1 = var_3;\n    var_4 = var_1;\n    write(var_2);\n}\nwrite(((var_1 != var_2) <= (var_1 / 27)));\nwhile (((var_3 && var_2) >= (27 > 33.99))) {\n    var_4 = 27;\n}"
+        },
+        {
+            "generation": 14,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((27 && var_0) < (var_2 && var_1))) {\n    continue;\n    write(var_5);\n    read(var_4);\n} else {\n    var_1 = var_3;\n    var_4 = var_1;\n    write(var_2);\n}\nwrite(((var_1 != var_2) <= (var_1 / 27)));\nwhile (((var_3 && var_2) >= (27 > 33.99))) {\n    var_4 = 27;\n}"
+        },
+        {
+            "generation": 15,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((33.99 > var_4) >= (27 || 33.99)));\nvar_5 = ((33.99 / var_0) && (var_2 == 27));\nwhile (((var_4 || var_4) != (27 == 33.99))) {\n    while (27) {\n    var_4 = var_1;\n    }\n    break;\n    read(var_3);\n}\nwhile (((33.99 != 27) > (var_4 + var_3))) {\n    read(var_5);\n    var_3 = 27;\n}"
+        },
+        {
+            "generation": 16,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_4);\nwhile (((((((var_1 < var_0) >= (33.99 != 33.99)) != ((27 != 33.99) <= (27 < var_1))) <= (((var_3 || 27) < (27 + var_2)) && ((var_3 < 27) != (var_4 + 33.99)))) + ((((var_5 != 33.99) > (27 < var_2)) + ((var_1 || var_0) > (var_4 != var_5))) && (((27 || var_1) >= (var_1 < 27)) + ((var_1 && var_4) == (var_4 / var_5))))) >= (27 || var_0))) {\n    break;\n}\nif (((var_5 >= var_1) || (27 != 33.99))) {\n    while (27) {\n    var_4 = var_1;\n    }\n}"
+        },
+        {
+            "generation": 17,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_4);\nwhile (((((((var_1 < var_0) >= (33.99 != 33.99)) != ((27 != 33.99) <= (27 < var_1))) <= (((var_3 || 27) < (27 + var_2)) && ((var_3 < 27) != (var_4 + 33.99)))) + ((((var_5 != 33.99) > (27 < var_2)) + ((var_1 || var_0) > (var_4 != var_5))) && (((27 || var_1) >= (var_1 < 27)) + ((var_1 && var_4) == (var_4 / var_5))))) >= (27 || var_0))) {\n    break;\n}\nif (((var_5 >= var_1) || (27 != 33.99))) {\n    while (27) {\n    var_4 = var_1;\n    }\n}"
+        },
+        {
+            "generation": 18,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_1 > 33.99) > (33.99 >= var_1)));\nif (((27 / var_1) != (33.99 == var_4))) {\n    var_2 = var_0;\n    write(27);\n}\nwrite(((27 + var_0) != (var_3 + 27)));\nwhile (((var_4 / var_5) <= (33.99 || var_3))) {\n    break;\n    continue;\n}\nwrite(((var_5 >= 27) || (var_2 || 33.99)));"
+        },
+        {
+            "generation": 19,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_3 || 27) == (33.99 / var_0)));\nwhile (((var_5 == 27) <= (33.99 > var_5))) {\n    continue;\n    break;\n    continue;\n}\nvar_3 = ((33.99 >= var_5) && (var_5 && var_1));\nif (((var_0 >= var_1) || (var_3 / var_0))) {\n    if (27) {\n    var_2 = 33.99;\n    }\n}\nwrite(((var_0 / 33.99) * (var_4 && 27)));"
+        },
+        {
+            "generation": 20,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_3 || 27) == (33.99 / var_0)));\nwhile (((var_5 == 27) <= (33.99 > var_5))) {\n    continue;\n    break;\n    continue;\n}\nvar_3 = ((33.99 >= var_5) && (var_5 && var_1));\nif (((var_0 >= var_1) || (var_3 / var_0))) {\n    if (27) {\n    var_2 = 33.99;\n    }\n}\nwrite(((var_0 / 33.99) * (var_4 && 27)));"
+        },
+        {
+            "generation": 21,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((27 || 33.99) == (var_0 + 33.99))) {\n    if (33.99) {\n    var_5 = 33.99;\n    } else {\n    var_0 = var_5;\n    }\n    break;\n    continue;\n}\nvar_0 = ((27 < 27) != (27 >= 33.99));\nwhile (((var_5 && 33.99) != (var_5 == 33.99))) {\n    continue;\n}\nwrite(((var_5 / var_3) / (27 == 33.99)));\nif (((var_0 == var_1) && (var_1 != 33.99))) {\n    break;\n    break;\n}"
+        },
+        {
+            "generation": 22,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_3 < var_4) || (var_4 <= var_1)));\nif (((var_5 != var_4) + (var_1 >= 27))) {\n    read(var_4);\n}\nwrite(((var_1 <= var_4) == (var_0 + var_4)));"
+        },
+        {
+            "generation": 23,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((var_3 < var_4) || (var_4 <= var_1)));\nif (((var_5 != var_4) + (var_1 >= 27))) {\n    read(var_4);\n}\nwrite(((var_1 <= var_4) == (var_0 + var_4)));"
+        },
+        {
+            "generation": 24,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((27 - 33.99) || (27 <= var_2))) {\n    var_5 = 33.99;\n    if (33.99) {\n    var_0 = var_2;\n    } else {\n    var_4 = 27;\n    }\n    while (var_1) {\n    var_4 = var_3;\n    }\n}\nif (((var_2 || 27) != (var_3 != 33.99))) {\n    if (var_4) {\n    var_3 = 27;\n    } else {\n    var_0 = 27;\n    }\n} else {\n    read(var_4);\n}\nvar_5 = ((var_1 <= var_0) || (33.99 || 27));"
+        },
+        {
+            "generation": 25,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 && var_1) > (var_2 && var_0))) {\n    while (var_5) {\n    var_0 = var_4;\n    }\n}\nvar_5 = ((27 >= var_4) && (27 * var_4));\nread(var_2);\nvar_0 = ((33.99 != var_2) > (33.99 - var_0));\nif (((27 >= var_5) / (33.99 < var_1))) {\n    if (33.99) {\n    var_1 = 33.99;\n    } else {\n    var_4 = var_1;\n    }\n    read(var_4);\n}"
+        },
+        {
+            "generation": 26,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 && var_1) > (var_2 && var_0))) {\n    while (var_5) {\n    var_0 = var_4;\n    }\n}\nvar_5 = ((27 >= var_4) && (27 * var_4));\nread(var_2);\nvar_0 = ((33.99 != var_2) > (33.99 - var_0));\nif (((27 >= var_5) / (33.99 < var_1))) {\n    if (33.99) {\n    var_1 = 33.99;\n    } else {\n    var_4 = var_1;\n    }\n    read(var_4);\n}"
+        },
+        {
+            "generation": 27,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((27 > var_1) <= (var_0 == var_2)));\nif (((var_0 + 33.99) && (27 / 27))) {\n    var_0 = var_3;\n    write(var_0);\n}\nif (((27 != 33.99) <= (var_3 <= 33.99))) {\n    if (33.99) {\n    var_4 = var_4;\n    } else {\n    var_5 = 33.99;\n    }\n    var_2 = var_3;\n    continue;\n}\nvar_2 = ((var_3 / var_4) < (33.99 && 27));"
+        },
+        {
+            "generation": 28,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_2);\nwrite(((((((27 != 33.99) < (27 == var_5)) < ((var_3 && var_2) == (33.99 >= var_0))) + (((var_2 != var_2) * (33.99 && 33.99)) == ((var_0 / 27) == (((((27 && var_4) > (33.99 || 33.99)) + ((27 + var_1) != (var_5 <= var_1))) && (((((((var_2 != 33.99) - (var_5 != var_0)) != ((33.99 + 33.99) != (27 == var_2))) >= (((var_1 >= 33.99) >= (var_5 * 33.99)) > ((33.99 != 33.99) || (var_4 + 33.99)))) == ((((33.99 != 27) / (33.99 < var_0)) == ((27 != var_4) + (33.99 > 33.99))) || (((33.99 != 33.99) != (33.99 * 33.99)) == ((27 == 33.99) * (var_1 / var_4))))) && (27 / var_5)) * ((33.99 > var_3) - (27 == 27)))) * ((((var_3 || var_2) * (27 || var_2)) || ((33.99 != var_1) >= (var_0 - var_0))) > (((33.99 && 27) != (var_3 != var_5)) && ((27 <= 27) && (27 != var_3)))))))) != ((((var_1 || 33.99) / (33.99 && 27)) > ((27 - 27) < (var_2 < 27))) == (((27 * var_4) * (27 != 27)) / ((33.99 == 27) + (var_4 || 27))))) >= (var_3 != var_1)));"
+        },
+        {
+            "generation": 29,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "read(var_2);\nwrite(((((((27 != 33.99) < (27 == var_5)) < ((var_3 && var_2) == (33.99 >= var_0))) + (((var_2 != var_2) * (33.99 && 33.99)) == ((var_0 / 27) == (((((27 && var_4) > (33.99 || 33.99)) + ((27 + var_1) != (var_5 <= var_1))) && (((((((var_2 != 33.99) - (var_5 != var_0)) != ((33.99 + 33.99) != (27 == var_2))) >= (((var_1 >= 33.99) >= (var_5 * 33.99)) > ((33.99 != 33.99) || (var_4 + 33.99)))) == ((((33.99 != 27) / (33.99 < var_0)) == ((27 != var_4) + (33.99 > 33.99))) || (((33.99 != 33.99) != (33.99 * 33.99)) == ((27 == 33.99) * (var_1 / var_4))))) && (27 / var_5)) * ((33.99 > var_3) - (27 == 27)))) * ((((var_3 || var_2) * (27 || var_2)) || ((33.99 != var_1) >= (var_0 - var_0))) > (((33.99 && 27) != (var_3 != var_5)) && ((27 <= 27) && (27 != var_3)))))))) != ((((var_1 || 33.99) / (33.99 && 27)) > ((27 - 27) < (var_2 < 27))) == (((27 * var_4) * (27 != 27)) / ((33.99 == 27) + (var_4 || 27))))) >= (var_3 != var_1)));"
+        },
+        {
+            "generation": 30,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((27 && var_0) < (var_2 && var_1))) {\n    continue;\n    write(var_5);\n    read(var_4);\n} else {\n    var_1 = var_3;\n    var_4 = var_1;\n    write(var_2);\n}\nwrite(((var_1 != var_2) <= (((((33.99 == var_3) && (var_2 || 27)) || ((33.99 * 27) * (var_2 != var_5))) == (((var_2 + 27) > (33.99 < 27)) != ((var_3 >= 27) + (33.99 != var_5)))) > ((((33.99 == 33.99) || (33.99 != var_5)) < ((33.99 && 33.99) + (var_2 - var_4))) >= (((var_4 != var_2) == (33.99 / 27)) && ((27 + var_5) > (27 || var_1)))))));\nwhile (((var_3 && var_2) >= (27 > 33.99))) {\n    var_4 = 27;\n}"
+        },
+        {
+            "generation": 31,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 && var_1) > (var_2 && var_0))) {\n    while (var_5) {\n    var_2 = var_4;\n    }\n}\nvar_5 = ((27 >= var_4) && (27 * var_4));\nread(var_2);\nvar_0 = ((33.99 != var_2) > (33.99 - var_0));\nif (((27 >= var_5) / (33.99 < var_1))) {\n    if (33.99) {\n    var_1 = 33.99;\n    } else {\n    var_4 = var_1;\n    }\n    read(var_4);\n}"
+        },
+        {
+            "generation": 32,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 && var_1) > (var_2 && var_0))) {\n    while (var_5) {\n    var_2 = var_4;\n    }\n}\nvar_5 = ((27 >= var_4) && (27 * var_4));\nread(var_2);\nvar_0 = ((33.99 != var_2) > (33.99 - var_0));\nif (((27 >= var_5) / (33.99 < var_1))) {\n    if (33.99) {\n    var_1 = 33.99;\n    } else {\n    var_4 = var_1;\n    }\n    read(var_4);\n}"
+        },
+        {
+            "generation": 33,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((var_4 && 33.99) != (33.99 >= 27))) {\n    write(33.99);\n}\nwhile (((var_3 && var_2) == (var_3 && 33.99))) {\n    var_4 = 27;\n    if (var_5) {\n    var_2 = var_4;\n    } else {\n    var_1 = var_3;\n    }\n    break;\n}"
+        },
+        {
+            "generation": 34,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((var_4 && 33.99) != (33.99 >= 27))) {\n    write(33.99);\n}\nwhile (((var_3 && var_2) == (var_3 && 33.99))) {\n    var_4 = 27;\n    if (var_5) {\n    var_2 = var_4;\n    } else {\n    var_1 = var_3;\n    }\n    break;\n}"
+        },
+        {
+            "generation": 35,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "if (((var_4 && 33.99) != (33.99 >= 27))) {\n    write(33.99);\n}\nwhile (((var_3 && var_2) == (var_3 && 33.99))) {\n    var_4 = 27;\n    if (var_5) {\n    var_2 = var_4;\n    } else {\n    var_1 = var_3;\n    }\n    break;\n}"
+        },
+        {
+            "generation": 36,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_2 <= var_2) >= (33.99 <= var_3))) {\n    continue;\n    continue;\n    write(33.99);\n}\nif (((var_3 && 27) == (var_4 && 33.99))) {\n    read(var_2);\n    var_2 = var_0;\n    break;\n}\nread(var_5);\nif (((var_4 && var_4) || (33.99 && var_5))) {\n    if (var_3) {\n    var_2 = var_3;\n    } else {\n    var_3 = var_2;\n    }\n    read(var_1);\n} else {\n    read(var_2);\n}"
+        },
+        {
+            "generation": 37,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((27 == 27) && (27 != 33.99)));\nwrite(((var_1 && 33.99) || (var_4 < 33.99)));\nwrite(((27 - 27) > (33.99 && 33.99)));\nif (((var_5 || 33.99) != (var_2 == 33.99))) {\n    while (27) {\n    var_5 = var_5;\n    }\n    if (var_3) {\n    var_2 = var_1;\n    } else {\n    var_1 = 33.99;\n    }\n    if (27) {\n    var_1 = var_3;\n    } else {\n    var_0 = var_3;\n    }\n} else {\n    write(var_1);\n}"
+        },
+        {
+            "generation": 38,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((27 == 27) && (27 != 33.99)));\nwrite(((var_1 && 33.99) || (var_4 < 33.99)));\nwrite(((27 - 27) > (33.99 && 33.99)));\nif (((var_5 || 33.99) != (var_2 == 33.99))) {\n    while (27) {\n    var_5 = var_5;\n    }\n    if (var_3) {\n    var_2 = var_1;\n    } else {\n    var_1 = 33.99;\n    }\n    if (27) {\n    var_1 = var_3;\n    } else {\n    var_0 = var_3;\n    }\n} else {\n    write(var_1);\n}"
+        },
+        {
+            "generation": 39,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((33.99 && var_3) > (var_0 || var_4)));\nif (((var_1 && 27) * (var_4 - 27))) {\n    var_1 = 33.99;\n    break;\n} else {\n    write(33.99);\n    continue;\n}\nwhile (((33.99 || 33.99) * (var_4 || 33.99))) {\n    break;\n    continue;\n}\nwrite(((var_5 / 33.99) / (27 && 33.99)));"
+        },
+        {
+            "generation": 40,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((27 > var_1) - (var_3 != 27)));\nwrite(((27 == var_0) || (var_0 >= 33.99)));\nwrite(((var_5 <= 27) * (var_0 != 33.99)));\nread(var_3);"
+        },
+        {
+            "generation": 41,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "write(((27 > var_1) - (var_3 != 27)));\nwrite(((27 == var_0) || (var_0 >= 33.99)));\nwrite(((var_5 <= 27) * (var_0 != 33.99)));\nread(var_3);"
+        },
+        {
+            "generation": 42,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 && var_1) > (var_2 && var_0))) {\n    while (var_5) {\n    var_2 = var_4;\n    }\n}\nvar_5 = ((27 >= var_4) && (27 * var_4));\nread(var_2);\nvar_0 = ((33.99 != var_2) > (33.99 - var_0));\nif (((27 >= var_5) / (33.99 < var_1))) {\n    if (33.99) {\n    var_1 = 33.99;\n    } else {\n    var_4 = var_1;\n    }\n    read(var_4);\n}"
+        },
+        {
+            "generation": 43,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_0 * var_0) && (var_0 && 33.99))) {\n    read(var_2);\n    break;\n}\nwrite(((var_4 == var_4) > (27 >= 27)));\nread(var_5);\nif (((var_0 != var_1) || (var_3 || var_1))) {\n    if (33.99) {\n    var_1 = var_3;\n    } else {\n    var_2 = 33.99;\n    }\n} else {\n    while (var_5) {\n    var_2 = 27;\n    }\n    while (33.99) {\n    var_5 = var_0;\n    }\n}\nwrite(((27 && var_3) - (27 / var_1)));"
+        },
+        {
+            "generation": 44,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_0 * var_0) && (var_0 && 33.99))) {\n    read(var_2);\n    break;\n}\nwrite(((var_4 == var_4) > (27 >= 27)));\nread(var_5);\nif (((var_0 != var_1) || (var_3 || var_1))) {\n    if (33.99) {\n    var_1 = var_3;\n    } else {\n    var_2 = 33.99;\n    }\n} else {\n    while (var_5) {\n    var_2 = 27;\n    }\n    while (33.99) {\n    var_5 = var_0;\n    }\n}\nwrite(((27 && var_3) - (27 / var_1)));"
+        },
+        {
+            "generation": 45,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((27 < var_3) < (var_0 && var_0))) {\n    write(var_2);\n    read(var_2);\n}\nvar_0 = ((var_1 == 33.99) > (var_0 + 27));"
+        },
+        {
+            "generation": 46,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_0 * var_0) && (var_0 && 33.99))) {\n    read(var_2);\n    break;\n}\nwrite(((var_4 == var_4) > (27 >= 27)));\nread(var_5);\nif (((var_0 != var_1) || (var_3 || var_1))) {\n    if (33.99) {\n    var_1 = var_3;\n    } else {\n    var_2 = 33.99;\n    }\n} else {\n    while (var_5) {\n    var_2 = 27;\n    }\n    while (33.99) {\n    var_5 = var_0;\n    }\n}\nwrite(((27 && var_3) - (27 / var_1)));"
+        },
+        {
+            "generation": 47,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((var_0 * var_0) && (var_0 && 33.99))) {\n    read(var_2);\n    break;\n}\nwrite(((var_4 == var_4) > (27 >= 27)));\nread(var_5);\nif (((var_0 != var_1) || (var_3 || var_1))) {\n    if (33.99) {\n    var_1 = var_3;\n    } else {\n    var_2 = 33.99;\n    }\n} else {\n    while (var_5) {\n    var_2 = 27;\n    }\n    while (33.99) {\n    var_5 = var_0;\n    }\n}\nwrite(((27 && var_3) - (27 / var_1)));"
+        },
+        {
+            "generation": 48,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "var_5 = ((27 == 33.99) - (27 / var_0));\nif (((var_1 != var_5) == (var_4 + var_4))) {\n    read(var_5);\n    continue;\n    read(var_4);\n} else {\n    var_0 = 33.99;\n}\nwrite(((var_3 > var_5) && (33.99 && 27)));\nread(var_5);\nvar_4 = ((27 < 33.99) == (var_4 <= var_3));"
+        },
+        {
+            "generation": 49,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 != var_4) <= (27 || 27))) {\n    read(var_3);\n    break;\n    read(var_2);\n}\nread(var_0);\nvar_2 = ((var_0 / var_4) > (var_4 + 27));"
+        },
+        {
+            "generation": 50,
+            "best_fitness": 0.9619771863117871,
+            "average_fitness": 0.961977186311787,
+            "best_program_code": "while (((33.99 != var_4) <= (27 || 27))) {\n    read(var_3);\n    break;\n    read(var_2);\n}\nread(var_0);\nvar_2 = ((var_0 / var_4) > (var_4 + 27));"
+        }
+    ]
+}

@@ -1,26 +1,44 @@
-import sys
-from antlr4 import *
-from interpreter import InterpreterVisitor
-from gen.grammarGPLexer import grammarGPLexer
-from gen.grammarGPParser import grammarGPParser
+import json
+import random
+from interpreter import Interpreter
+from biblioteki import GrammarGP, Node
+
+# Inicjalizacja obiektu GrammarGP
+lang = GrammarGP(max_depth=3, min_depth=1, mutation_rate=0.3)
+
+# Generowanie populacji programów
+population = lang.generate_population(size=2)
+
+# Iteracja przez populację i wyświetlanie informacji o programach
+for individual in range(len(population)):
+    print("Program numer: ", individual + 1)
+    print(lang.to_code(population[individual]))  # Generowanie kodu z drzewa
 
 
-def main():
-    input_file = "in.txt"
-    output_file = "out.txt"
 
-    lexer = grammarGPLexer(FileStream(input_file))
-    stream = CommonTokenStream(lexer)
-    parser = grammarGPParser(stream)
-    tree = parser.program()
+# Tworzenie mutanta
+newbaby1 = lang.mutate(population[0])
+newbaby2 = lang.mutate(population[1])
 
-    visitor = InterpreterVisitor(input_file, output_file, max_instructions=1000)
-    try:
-        visitor.visit(tree)
-        print(f"Interpretacja zakończona. Wynik zapisany w {output_file}.")
-    except Exception as e:
-        print(f"Błąd wykonania: {e}")
+# Wyświetlanie mutacji
+print("mutant 1")
+print(lang.to_code(newbaby1))  # Generowanie kodu z mutowanego drzewa
 
+print("mutant 2")
+print(lang.to_code(newbaby2))  # Generowanie kodu z mutowanego drzewa
 
-if __name__ == "__main__":
-    main()
+interpreter = Interpreter(1000,100)
+print("\nWykonywanie programu 1:")
+interpreter.execute(population[0])
+print("\nZmiennie:")
+print(interpreter.variables)
+print("\nWyniki:")
+print(interpreter.output)
+
+int = Interpreter(1000,100)
+print("\nWykonywanie programu 2:")
+int.execute(population[1])
+print("\nZmiennie:")
+print(int.variables)
+print("\nWyniki:")
+print(int.output)

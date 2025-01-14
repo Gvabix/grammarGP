@@ -1,0 +1,13 @@
+{
+    "best_program_code": "write(((((var_4 != 1.56) >= (var_4 + 1.56)) && ((var_4 + 1.56) == (63 != var_1))) <= (((1.56 || 63) <= (var_4 != 1.56)) == ((var_2 > 1.56) && (var_1 && var_3)))));\nwhile (((((var_5 || var_3) || (63 > 63)) - ((var_3 + 63) / (1.56 == var_1))) * (((1.56 && 1.56) && (63 == 63)) * ((1.56 > var_0) - (var_1 * var_2))))) {\n    while (((var_1 != var_4) < (var_5 || 63))) {\n    {\n        write(var_3);\n        while (var_2) {\n        var_2 = 63;\n        }\n        break;\n    }\n    }\n    continue;\n    if (((1.56 - var_0) <= (1.56 == var_2))) {\n    {\n        if (1.56) {\n        var_5 = 63;\n        }\n    }\n    } else {\n    {\n        if (63) {\n        var_3 = var_1;\n        } else {\n        var_5 = 1.56;\n        }\n        read(var_5);\n        continue;\n    }\n    }\n}",
+    "best_fitness": 1.0,
+    "generation_found": 1,
+    "generations": [
+        {
+            "generation": 1,
+            "best_fitness": 1.0,
+            "average_fitness": 1.0,
+            "best_program_code": "write(((((var_4 != 1.56) >= (var_4 + 1.56)) && ((var_4 + 1.56) == (63 != var_1))) <= (((1.56 || 63) <= (var_4 != 1.56)) == ((var_2 > 1.56) && (var_1 && var_3)))));\nwhile (((((var_5 || var_3) || (63 > 63)) - ((var_3 + 63) / (1.56 == var_1))) * (((1.56 && 1.56) && (63 == 63)) * ((1.56 > var_0) - (var_1 * var_2))))) {\n    while (((var_1 != var_4) < (var_5 || 63))) {\n    {\n        write(var_3);\n        while (var_2) {\n        var_2 = 63;\n        }\n        break;\n    }\n    }\n    continue;\n    if (((1.56 - var_0) <= (1.56 == var_2))) {\n    {\n        if (1.56) {\n        var_5 = 63;\n        }\n    }\n    } else {\n    {\n        if (63) {\n        var_3 = var_1;\n        } else {\n        var_5 = 1.56;\n        }\n        read(var_5);\n        continue;\n    }\n    }\n}"
+        }
+    ]
+}

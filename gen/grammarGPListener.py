@@ -1,9 +1,9 @@
 # Generated from grammarGP.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
-    from gen.grammarGPParser import grammarGPParser
+    from .grammarGPParser import grammarGPParser
 else:
-    from gen.grammarGPParser import grammarGPParser
+    from grammarGPParser import grammarGPParser
 
 # This class defines a complete listener for a parse tree produced by grammarGPParser.
 class grammarGPListener(ParseTreeListener):

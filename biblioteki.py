@@ -31,6 +31,18 @@ class GrammarGP:
             'equality': ['==', '!='],
         }
 
+    def generate_population(self, size: int) -> List[Node]:
+        population = []
+        depths = list(range(self.min_depth, self.max_depth + 1))
+
+        for i in range(size):
+            # Wybieranie głębokości z dostępnych wartości
+            depth = depths[i % len(depths)]
+            program = self.generate_program(depth=0)  # Głębokość początkowa dla programu
+            population.append(program)
+
+        return population
+
     def generate_program(self, depth: int = 0) -> Node:
         program = Node('program', '')
         num_statements = random.randint(3, 6)  # Liczba pozostałych instrukcji
@@ -96,6 +108,7 @@ class GrammarGP:
 
         return Node('expression', operator, [left_expr, right_expr])
 
+
     def generate_statement(self, depth: int) -> Node:
         # Zapewnienie, że głębokość nie przekroczy max_depth
         if depth >= self.max_depth:
@@ -115,13 +128,18 @@ class GrammarGP:
             return self.generate_write(depth)
 
     def generate_if(self, depth: int) -> Node:
-        node = Node('ifStatement', 'if', [
-            self.generate_expression(depth + 1),
-            self.generate_block(depth + 1)
-        ])
+        condition = self.generate_expression(depth + 1)
+        block = self.generate_block(depth + 1)
 
-        node.children.append(self.generate_block(depth + 1))
-        return node
+        # Upewnij się, że kod if jest poprawny
+        if_node = Node('ifStatement', 'if', [condition, block])
+
+        # Jeśli blok else istnieje
+        if random.random() < 0.5:
+            else_block = self.generate_block(depth + 1)
+            if_node.children.append(else_block)
+
+        return if_node
 
     def generate_loop(self, depth: int) -> Node:
         return Node('loopStatement', 'while', [
@@ -214,6 +232,8 @@ class GrammarGP:
         elif node.type == 'expression':
             left = self.to_code(node.children[0], 0)
             right = self.to_code(node.children[1], 0)
+
+            # Zwróć wyrażenie z nawiasami wokół niego
             return f"({left} {node.value} {right})"
         elif node.type in ['literal', 'identifier']:
             return node.value
@@ -244,47 +264,25 @@ class GrammarGP:
                 nodes[i] = new_subtree
                 break
 
-def main():
-    gp = GrammarGP(max_depth=4, min_depth=1, mutation_rate=0.25)
-    population_size = 10
-    generations = 10
-    tournament_size = 2
+    def to_dict(self, node: Node) -> dict:
+        return {
+            'type': node.type,
+            'value': node.value,
+            'children': [self.to_dict(child) for child in node.children]
+        }
 
-    population = [gp.generate_program() for _ in range(population_size)]
-    results = []
+    def _from_dict(self, data: dict) -> Node:
+        children = [self._from_dict(child) for child in data['children']]
+        return Node(type=data['type'], value=data['value'], children=children)
 
-    for generation in range(generations):
-        fitness_scores = [random.random() for _ in population]
-        new_population = []
+    # Serializacja do JSON
+    def serialize_node(self, node: Node) -> str:
+        return json.dumps(node.to_dict(node))
 
-        while len(new_population) < population_size:
-            parent1 = gp.tournament_selection(population, fitness_scores, tournament_size)
-            parent2 = gp.tournament_selection(population, fitness_scores, tournament_size)
+    # Deserializacja z JSON
+    def deserialize_node(self, json_data: str) -> Node:
+        data = json.loads(json_data)
+        return self._from_dict(data)
 
-            # Perform crossover
-            offspring = gp.subtree_crossover(parent1, parent2)
-
-            # Mutate the offspring
-            offspring = gp.mutate(offspring)
-            new_population.append(offspring)
-
-        population = new_population
-
-        best_program = max(population, key=lambda prog: fitness_scores[population.index(prog)])
-        best_fitness = max(fitness_scores)
-        avg_fitness = sum(fitness_scores) / len(fitness_scores)
-
-        results.append({
-            "generation": generation,
-            "best_program": gp.to_code(best_program),
-            "best_fitness": best_fitness,
-            "average_fitness": avg_fitness,
-        })
-
-    with open('results1.json', 'w') as f:
-        json.dump(results, f, indent=4)
-    print("Zapisano wyniki do pliku results1.json")
-
-if __name__ == "__main__":
-    main()
-
+def fitness_func(node: 'Node') -> float:
+    return random.random()

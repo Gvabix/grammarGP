@@ -1,0 +1,13 @@
+{
+    "best_program_code": "write(((var_5 < var_4) == (59.97 == 96)));\nwrite(((96 / 59.97) || (var_4 < 59.97)));\nwrite(((96 / 96) * (59.97 + var_3)));\nwhile (((96 && 96) && (96 != 59.97))) {\n    break;\n}\nwrite(((var_1 >= var_1) >= (96 == var_4)));",
+    "best_fitness": 1.0,
+    "generation_found": 1,
+    "generations": [
+        {
+            "generation": 1,
+            "best_fitness": 1.0,
+            "average_fitness": 0.9998,
+            "best_program_code": "write(((var_5 < var_4) == (59.97 == 96)));\nwrite(((96 / 59.97) || (var_4 < 59.97)));\nwrite(((96 / 96) * (59.97 + var_3)));\nwhile (((96 && 96) && (96 != 59.97))) {\n    break;\n}\nwrite(((var_1 >= var_1) >= (96 == var_4)));"
+        }
+    ]
+}

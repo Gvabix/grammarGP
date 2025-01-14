@@ -1,9 +1,9 @@
-# Generated from C:/Users/emili/Desktop/gene2/grammarGP/grammarGP.g4 by ANTLR 4.13.2
+# Generated from grammarGP.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
-    from .grammarGPParser import grammarGPParser
+    from grammarGPParser import grammarGPParser
 else:
-    from gen.grammarGPParser import grammarGPParser
+    from grammarGPParser import grammarGPParser
 
 # This class defines a complete generic visitor for a parse tree produced by grammarGPParser.
 
@@ -14,13 +14,13 @@ class grammarGPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by grammarGPParser#block.
-    def visitBlock(self, ctx:grammarGPParser.BlockContext):
+    # Visit a parse tree produced by grammarGPParser#statement.
+    def visitStatement(self, ctx:grammarGPParser.StatementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by grammarGPParser#statement.
-    def visitStatement(self, ctx:grammarGPParser.StatementContext):
+    # Visit a parse tree produced by grammarGPParser#block.
+    def visitBlock(self, ctx:grammarGPParser.BlockContext):
         return self.visitChildren(ctx)
 
 
@@ -36,6 +36,11 @@ class grammarGPVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by grammarGPParser#loopStatement.
     def visitLoopStatement(self, ctx:grammarGPParser.LoopStatementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by grammarGPParser#loopStatementContent.
+    def visitLoopStatementContent(self, ctx:grammarGPParser.LoopStatementContentContext):
         return self.visitChildren(ctx)
 
 
